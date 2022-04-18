@@ -2,7 +2,21 @@ import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Navbar, Homepage, Products, Cart, Checkout, Glidewaxes, Toppings, Gripwaxes, Accessories, About, Contact, Whyus } from "./components";
+import {
+  Navbar,
+  Homepage,
+  Products,
+  Cart,
+  Checkout,
+  Glidewaxes,
+  Toppings,
+  Gripwaxes,
+  Accessories,
+  About,
+  Contact,
+  Whyus,
+  Search,
+} from "./components";
 import { commerce } from "./lib/commerce";
 
 const App = () => {
@@ -72,8 +86,6 @@ const App = () => {
     fetchCart();
   }, []);
 
-  console.log(products);
-
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   return (
@@ -81,15 +93,16 @@ const App = () => {
       <div style={{ display: "flex" }}>
         <CssBaseline />
         <Navbar
+          products={products}
           totalItems={cart.total_items}
           handleDrawerToggle={handleDrawerToggle}
         />
         <Switch>
           <Route exact path="/">
             <Homepage
-            products={products}
-            onAddToCart={handleAddToCart}
-            handleUpdateCartQty
+              products={products}
+              onAddToCart={handleAddToCart}
+              handleUpdateCartQty
             />
           </Route>
           <Route exact path="/products">
@@ -98,18 +111,33 @@ const App = () => {
               onAddToCart={handleAddToCart}
               handleUpdateCartQty
             />
-            <Route exact path="products/luistovoiteet">
-              <Glidewaxes />
+            <Route exact path="/products/luistovoiteet">
+              <Glidewaxes
+                products={products}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
-            <Route exact path="products/pinnoitteet">
-              <Toppings />
+            <Route exact path="/products/pinnoitteet">
+              <Toppings
+                Products={products}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
-            <Route exact path="products/pitovoiteet">
-              <Gripwaxes />
+            <Route exact path="/products/pitovoiteet" >
+              <Gripwaxes
+                products={products}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
-            <Route exact path="products/oheistuotteet">
-              <Accessories />
-            </Route>
+            <Route path="/products/oheistuotteet" exact component={()=> <Accessories
+                products={products}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              /> }
+            />
           </Route>
           <Route exact path="/yritys">
             <About />

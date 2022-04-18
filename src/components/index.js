@@ -10,4 +10,4 @@ export { default as Accessories } from "./Products/Accessories";
 export { default as About } from "./About/About";
 export { default as Whyus } from "./Whyus/Whyus";
 export { default as Contact } from "./Contact/Contact";
-
+export { default as Search } from "./Search/Search";
