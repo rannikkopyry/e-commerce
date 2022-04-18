@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Navbar, Homepage, Products, Cart, Checkout } from "./components";
+import { Navbar, Homepage, Products, Cart, Checkout, Glidewaxes, Toppings, Gripwaxes, Accessories, About, Contact, Whyus } from "./components";
 import { commerce } from "./lib/commerce";
 
 const App = () => {
@@ -86,7 +86,11 @@ const App = () => {
         />
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Homepage
+            products={products}
+            onAddToCart={handleAddToCart}
+            handleUpdateCartQty
+            />
           </Route>
           <Route exact path="/products">
             <Products
@@ -94,6 +98,27 @@ const App = () => {
               onAddToCart={handleAddToCart}
               handleUpdateCartQty
             />
+            <Route exact path="products/luistovoiteet">
+              <Glidewaxes />
+            </Route>
+            <Route exact path="products/pinnoitteet">
+              <Toppings />
+            </Route>
+            <Route exact path="products/pitovoiteet">
+              <Gripwaxes />
+            </Route>
+            <Route exact path="products/oheistuotteet">
+              <Accessories />
+            </Route>
+          </Route>
+          <Route exact path="/yritys">
+            <About />
+          </Route>
+          <Route exact path="/miksimeidat">
+            <Whyus />
+          </Route>
+          <Route exact path="/yhteystiedot">
+            <Contact />
           </Route>
           <Route exact path="/cart">
             <Cart

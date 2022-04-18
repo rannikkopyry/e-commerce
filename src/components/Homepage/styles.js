@@ -1,9 +1,5 @@
 import { makeStyles} from "@material-ui/core/styles";
-import { Autocomplete } from "@material-ui/lab";
 
-const drawerWidth = 0;
-
-const url = 'https://www.yesskiwax.com/images/thumbs/0000346_Custom%20Size%20%E2%80%93en4.jpeg';
 
 export default makeStyles((theme) => ({
   container: {
@@ -16,5 +12,14 @@ export default makeStyles((theme) => ({
   title: {
     textAlign: "center",
     marginTop: "100px",
-}
+},
+toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
+  },
+  root: {
+    flexGrow: 1,
+  },
 }));
