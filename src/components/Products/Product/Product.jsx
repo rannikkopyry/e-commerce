@@ -14,8 +14,6 @@ import useStyles from "./styles";
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
 
-  console.log(product);
-
   const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (

@@ -11,55 +11,25 @@ import {
 import { ShoppingCart } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Grow from "@mui/material/Grow";
-import Paper from "@mui/material/Paper";
-import Popper from "@mui/material/Popper";
-import MenuList from "@mui/material/MenuList";
-import { styled, alpha } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
-import Search from '../Search/Search';
+import Search from "../Search/Search";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import Popover from "@mui/material/Popover";
 
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
 
-
 const PrimarySearchAppBar = ({ totalItems, products }) => {
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-
-    setOpen(false);
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
   };
 
-  function handleListKeyDown(event) {
-    if (event.key === "Tab") {
-      event.preventDefault();
-      setOpen(false);
-    } else if (event.key === "Escape") {
-      setOpen(false);
-    }
-  }
-
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);
-
+  const open = Boolean(anchorEl);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
 
@@ -119,64 +89,25 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
             </Button>
           </div>
           <div className={classes.menuitem}>
-            <Button
-              ref={anchorRef}
-              id="composition-button"
-              aria-controls={open ? "composition-menu" : undefined}
-              aria-expanded={open ? "true" : undefined}
-              aria-haspopup="true"
-              onClick={handleToggle}
-            >
-              Tuotteet
+          <div className={classes.menuitem}>
+            <Button component={Link} id="basic-button" to="/luistovoiteet">
+              Luistovoiteet
             </Button>
-            <Popper
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              placement="bottom-start"
-              transition
-              disablePortal
-            >
-              {({ TransitionProps, placement }) => (
-                <Grow
-                  {...TransitionProps}
-                  style={{
-                    transformOrigin:
-                      placement === "bottom-start" ? "left top" : "left bottom",
-                  }}
-                >
-                  <Paper>
-                    <ClickAwayListener onClickAway={handleClose}>
-                      <MenuList
-                        autoFocusItem={open}
-                        id="composition-menu"
-                        aria-labelledby="composition-button"
-                        onKeyDown={handleListKeyDown}
-                      >
-                        <MenuItem onClick={handleClose}>
-                          <Button component={Link} to="/products/luistovoiteet">
-                            Luistovoiteet
-                          </Button>
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                          Luistopinnoitteet
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>Pitovoiteet</MenuItem>
-                        <MenuItem onClick={handleClose}>
-                        <Button component={Link} to="/products/oheistuotteet">
-                            Muut
-                          </Button>
-                        </MenuItem>
-                      </MenuList>
-                    </ClickAwayListener>
-                  </Paper>
-                </Grow>
-              )}
-            </Popper>
+          </div>
           </div>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/yritys">
-              Yritys
+            <Button component={Link} id="basic-button" to="/pitovoiteet">
+              Pitovoiteet
+            </Button>
+          </div>
+          <div className={classes.menuItem}>
+            <Button component={Link} id="basic-button" to="/rotokit">
+              Roto Kit
+            </Button>
+          </div>
+          <div className={classes.menuitem}>
+            <Button component={Link} id="basic-button" to="/muut">
+              Muut tuotteet
             </Button>
           </div>
           <div className={classes.menuitem}>
@@ -184,13 +115,7 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
               Yhteystiedot
             </Button>
           </div>
-          <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/miksimeidat">
-              Miksi valita meidät?
-            </Button>
-
-          </div>
-          <Search placeholder="Etsi tuotteita" data={products}/>
+          <Search placeholder="Etsi tuotteita" data={products} />
 
           <div className={classes.grow} />
           <div className={classes.button}>

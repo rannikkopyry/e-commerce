@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
-import Product from "../Products/Product/Product";
 
 import "./styles.css";
 
-function SearchBar({ placeholder, products }) {
+function Search({ placeholder, products }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -47,7 +46,7 @@ function SearchBar({ placeholder, products }) {
       </div>
       {filteredData.length !== 0 && (
         <div className="dataResult">
-          {products.slice(0, 15).map((product) => {
+          {filteredData.slice(0, 15).map((product) => {
             return (
               <a className="dataItem" href={product.name} target="_blank">
                 <h1>{product.name} </h1>
@@ -60,4 +59,4 @@ function SearchBar({ placeholder, products }) {
   );
 }
 
-export default SearchBar;
+export default Search;

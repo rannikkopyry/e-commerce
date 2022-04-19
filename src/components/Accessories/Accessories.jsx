@@ -3,10 +3,8 @@ import Grid from "@material-ui/core/Grid";
 import Product from "../Products/Product/Product";
 import useStyles from "./styles";
 
-const Accessories = ({ products, onAddToCart }) => {
+const Accessories = () => {
   const classes = useStyles();
-
-  if (!products.length) return <p>Loading...</p>;
 
   return (
     <>
@@ -14,16 +12,15 @@ const Accessories = ({ products, onAddToCart }) => {
         <h1 className={classes.title}>
           Odotetut Yes Skiwax-tuotteet ja paljon muuta meiltä.
         </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          odio enim nihil quisquam odit eaque reiciendis sapiente dolorem aut
+          harum modi qui mollitia, facilis ipsam delectus repellendus fugit
+          commodi maiores?
+        </p>
       </div>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Grid container justify="center" spacing={4}>
-          {products.map((product) => (
-            <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
-              <Product product={product} onAddToCart={onAddToCart} />
-            </Grid>
-          ))}
-        </Grid>
+        <div className={classes.toolbar}></div>
       </main>
     </>
   );

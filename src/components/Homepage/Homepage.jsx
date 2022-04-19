@@ -6,6 +6,7 @@ import Product from "../Products/Product/Product";
 const Homepage = ({ products, onAddToCart }) => {
   const classes = useStyles();
 
+  console.log(products)
   if (!products.length) return <p>Loading...</p>;
 
   return (

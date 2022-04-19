@@ -111,28 +111,28 @@ const App = () => {
               onAddToCart={handleAddToCart}
               handleUpdateCartQty
             />
-            <Route exact path="/products/luistovoiteet">
+            <Route exact path="/luistovoiteet">
               <Glidewaxes
                 products={products}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route exact path="/products/pinnoitteet">
+            <Route exact path="/pinnoitteet">
               <Toppings
                 Products={products}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route exact path="/products/pitovoiteet" >
+            <Route exact path="/pitovoiteet" >
               <Gripwaxes
                 products={products}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route path="/products/oheistuotteet" exact component={()=> <Accessories
+            <Route path="/muut" exact component={()=> <Accessories
                 products={products}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty

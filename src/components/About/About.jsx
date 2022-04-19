@@ -7,7 +7,10 @@ const About = () => {
 
     return ( 
         <div className={classes.container}>
-            <h1>Tietoa yrityksestä</h1>
+            <h1 className={classes.title}>Tietoa yrityksestä</h1>
+            <div className={classes.text}>
+                <p></p>
+            </div>
         </div>
      );
 }

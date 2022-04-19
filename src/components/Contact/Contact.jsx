@@ -1,10 +1,35 @@
 import React from 'react';
+import useStyles from "./styles";
+import logo from "../../assets/yesskiwax.png";
+
+
 
 const Contact = () => {
+    const classes = useStyles();
+
     return ( 
-        <div>
-            <h1>Contact us!</h1>
+        <>
+        <div className={classes.container}>
+          <h1 className={classes.title}>
+            Ota yhteyttä
+          </h1>
+          <div className={classes.image}>
+          <img
+              src={logo}
+              alt="Yesskiwax logo"
+              height="45px"
+              className={classes.image}
+            />
+          </div>
+
+        <main className={classes.content}>
+          <h2>Yes Skiwax Finland Oy</h2>
+          <p>Y-tunnus: 121301</p>
+          <p>Email: info@yeskiwax.fi</p>
+          <p>Puh: +358 452684828</p>
+        </main>
         </div>
+      </>
      );
 }
  
