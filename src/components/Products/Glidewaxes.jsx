@@ -1,16 +1,30 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
 
-const Glidewaxes = () => {
+import Product from "./Product/Product";
+import useStyles from "./styles";
+import { Category } from "@material-ui/icons";
+
+const Glidewaxes = ({ categories, onAddToCart }) => {
+  const classes = useStyles();
+
+  if (!categories.length) return <p>Loading...</p>;
+
   return (
-    <div>
-      <h1>Glidewaxes</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-        quaerat. Doloremque quas accusamus, eius fugit sapiente quos nihil neque
-        nemo deserunt dolore reiciendis et tempore velit minus libero soluta
-        sint?
-      </p>
-    </div>
+    <main className={classes.content}>
+    <div className={classes.toolbar} />
+    {categories.map((category) => {
+    return (
+      <Grid container justify="center" spacing={4}>
+      {category.productsData.map((product) => (
+        <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
+          <Product product={product} onAddToCart={onAddToCart} />
+        </Grid>
+      ))}
+    </Grid>
+    )
+    })}
+  </main>
   );
 };
 

@@ -90,7 +90,7 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
           </div>
           <div className={classes.menuitem}>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/luistovoiteet">
+            <Button component={Link} id="basic-button" to="/categories?categoryName=luistovoiteet">
               Luistovoiteet
             </Button>
           </div>

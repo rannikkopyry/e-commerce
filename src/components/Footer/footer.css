@@ -1,0 +1,43 @@
+.footer {
+  background-color: grey;
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.links {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+ul {
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+li {
+  display: table-cell;
+  margin: 5px;
+  text-align: center;
+}
+
+a {
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a:hover {
+  color: black;
+}
+.bottom {
+  width: 100%;
+  background-color: #ffff;
+}

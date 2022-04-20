@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import {
   Navbar,
+  Footer,
   Homepage,
   Products,
   Cart,
@@ -16,21 +17,40 @@ import {
   Contact,
   Whyus,
   Search,
+  TermsAndConditions,
+  PrivacyPolicy,
 } from "./components";
 import { commerce } from "./lib/commerce";
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
-  const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
+  // Fetching all products and by category
 
-    setProducts(data);
+  const fetchProducts = async () => {
+    const { data: products } = await commerce.products.list();
+    const { data: categoriesData } = await commerce.categories.list();
+
+    const productsPerCategory = categoriesData.reduce((acc, category) => {
+      return [
+        ...acc,
+        {
+          ...category,
+          productsData: products.filter((products) =>
+            products.categories.find((cat) => cat.id === category.id)
+          ),
+        },
+      ];
+    }, []);
+
+    setCategories(productsPerCategory);
   };
+
+  // Fetch cart
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -93,51 +113,52 @@ const App = () => {
       <div style={{ display: "flex" }}>
         <CssBaseline />
         <Navbar
-          products={products}
+          categories={categories}
           totalItems={cart.total_items}
           handleDrawerToggle={handleDrawerToggle}
         />
         <Switch>
           <Route exact path="/">
             <Homepage
-              products={products}
+              categories={categories}
               onAddToCart={handleAddToCart}
               handleUpdateCartQty
             />
           </Route>
           <Route exact path="/products">
             <Products
-              products={products}
+              categories={categories}
               onAddToCart={handleAddToCart}
               handleUpdateCartQty
             />
-            <Route exact path="/luistovoiteet">
+            </Route>
+            <Route exact path="/products?categoryName=luistovoiteet">
               <Glidewaxes
-                products={products}
+                categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
             <Route exact path="/pinnoitteet">
               <Toppings
-                Products={products}
+                categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route exact path="/pitovoiteet" >
+            <Route exact path="/gripwaxes">
               <Gripwaxes
-                products={products}
+                categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route path="/muut" exact component={()=> <Accessories
-                products={products}
+            <Route exact path="/muut">
+              <Accessories
+                categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
-              /> }
-            />
+             />
           </Route>
           <Route exact path="/yritys">
             <About />
@@ -164,8 +185,15 @@ const App = () => {
               error={errorMessage}
             />
           </Route>
+          <Route exact path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route exact path="/terms-and-conditions">
+            <TermsAndConditions />
+          </Route>
         </Switch>
       </div>
+      <Footer/>
     </Router>
   );
 };
