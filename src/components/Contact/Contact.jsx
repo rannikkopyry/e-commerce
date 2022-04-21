@@ -23,7 +23,8 @@ const Contact = () => {
           </div>
 
         <main className={classes.content}>
-          <h2>Yes Skiwax Finland Oy</h2>
+          <h2>Yes Skiwax Finland</h2>
+          <p>Less Friction Oy</p>
           <p>Y-tunnus: 121301</p>
           <p>Email: info@yeskiwax.fi</p>
           <p>Puh: +358 452684828</p>

@@ -8,29 +8,27 @@ const Footer = () => {
       <div className="footer">
         <div className="upper">
           <div className="links">
-            <ul>
-              <li>
-                <a href="/privacy-policy">Tietosuojaseloste</a>
+          <li>
+                <a href="/kayttoehdot">Käyttöehdot</a>
               </li>
               <li>
-                <a href="/terms-and-conditions">Käyttöehdot</a>
+                <a href="/tietosuojaseloste">Tietosuojaseloste</a>
               </li>
               <li>
                 <a href="/yhteystiedot">Yhteystiedot</a>
               </li>
-            </ul>
           </div>
         </div>
 
         <div className="text-center p-3" style={{ backgroundColor: "grey" }}>
           &copy; {new Date().getFullYear()}{" "}
           <p>
-            Yes Skiwax Finland Oy
+            Yes Skiwax Finland
           </p>
         </div>
         <div className="bottom">
-          <h3>
-            Site created by <a href="https://rpsolutions.tech/">RP-Solutions</a>
+          <h3 className="rpsolutions">
+            Site created by<a href="https://rpsolutions.tech/">RP-Solutions</a>
           </h3>
         </div>
       </div>

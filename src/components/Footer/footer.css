@@ -9,17 +9,15 @@
   width: 100%;
 }
 
+.upper{
+  margin: 20px;
+}
+
 .links {
   width: 100%;
   margin: auto;
   justify-content: center;
   text-align: center;
-}
-
-ul {
-  display: table;
-  text-align: center;
-  width: 100%;
 }
 
 li {
@@ -40,4 +38,8 @@ a:hover {
 .bottom {
   width: 100%;
   background-color: #ffff;
+}
+
+.rpsolutions{
+  color: #C83532;
 }

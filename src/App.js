@@ -194,10 +194,10 @@ const App = () => {
               error={errorMessage}
             />
           </Route>
-          <Route exact path="/privacy-policy">
+          <Route exact path="/tietosuojaseloste">
             <PrivacyPolicy />
           </Route>
-          <Route exact path="/terms-and-conditions">
+          <Route exact path="/kayttoehdot">
             <TermsAndConditions />
           </Route>
         </Switch>

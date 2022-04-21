@@ -13,7 +13,8 @@ import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Search from "../Search/Search";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import Popover from "@mui/material/Popover";
+import { purple } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
@@ -65,6 +66,29 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
     </Menu>
   );
 
+  const BootstrapButton = styled(Button)({
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    padding: "6px 12px",
+    lineHeight: 1.5,
+    color: "#000000",
+    backgroundColor: "#fffff",
+    fontFamily: ["font-family: 'Arimo', sans-serif"].join(","),
+    "&:hover": {
+      boxShadow: "none",
+      color: "#C83532",
+
+    },
+    "&:active": {
+      boxShadow: "0 0 0 0.2rem #C83532",
+      borderColor: "#C83532",
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem #C83532",
+    },
+  });
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -84,36 +108,40 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
             />
           </Typography>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/">
+            <BootstrapButton component={Link} id="basic-button" to="/">
               Etusivu
-            </Button>
+            </BootstrapButton>
           </div>
           <div className={classes.menuitem}>
-          <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/luistovoiteet">
-              Luistovoiteet
-            </Button>
+            <div className={classes.menuitem}>
+              <BootstrapButton
+                component={Link}
+                id="basic-button"
+                to="/luistovoiteet"
+              >
+                Luistovoiteet
+              </BootstrapButton>
+            </div>
           </div>
-          </div>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/pitovoiteet">
+            <BootstrapButton component={Link} id="basic-button" to="/pitovoiteet">
               Pitovoiteet
-            </Button>
+            </BootstrapButton>
           </div>
           <div className={classes.menuItem}>
-            <Button component={Link} id="basic-button" to="/rotokit">
+            <BootstrapButton component={Link} id="basic-button" to="/rotokit">
               Roto Kit
-            </Button>
+            </BootstrapButton>
           </div>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/muut">
+            <BootstrapButton component={Link} id="basic-button" to="/muut">
               Muut tuotteet
-            </Button>
+            </BootstrapButton>
           </div>
           <div className={classes.menuitem}>
-            <Button component={Link} id="basic-button" to="/yhteystiedot">
+            <BootstrapButton component={Link} id="basic-button" to="/yhteystiedot">
               Yhteystiedot
-            </Button>
+            </BootstrapButton>
           </div>
           <Search placeholder="Etsi tuotteita" data={products} />
 

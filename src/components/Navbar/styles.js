@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
   image: {
     marginRight: "5px",
   },
-  menuItem: {
+  menuitem: {
     color: "black",
   },
   menuButton: {
