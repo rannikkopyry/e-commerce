@@ -4,7 +4,7 @@ export { default as Cart } from "./Cart/Cart";
 export { default as Homepage } from "./Homepage/Homepage";
 export { default as Checkout } from "./CheckoutForm/Checkout/Checkout";
 export { default as Glidewaxes } from "./Products/Glidewaxes";
-export { default as Toppings } from "./Products/Toppings";
+export { default as Rotokit } from "./Products/Rotokit";
 export { default as Gripwaxes } from "./Products/Gripwaxes";
 export { default as Accessories } from "./Accessories/Accessories";
 export { default as About } from "./About/About";
@@ -12,5 +12,8 @@ export { default as Whyus } from "./Whyus/Whyus";
 export { default as Contact } from "./Contact/Contact";
 export { default as Search } from "./Search/Search";
 export { default as Footer } from "./Footer/Footer";
-export { default as PrivacyPolicy } from "./FooterPages/PrivacyPolicy"
-export { default as TermsAndConditions } from "./FooterPages/TermsAndConditions"
+export { default as PrivacyPolicy } from "./FooterPages/PrivacyPolicy";
+export { default as TermsAndConditions } from "./FooterPages/TermsAndConditions";
+export { default as LoaderSpinner } from "./LoaderSpinner/LoaderSpinner";
+export { default as OtherProducts } from './Products/OtherProducts';
+export { default as ProductShowcase } from "./Products/ProductsShowcase";

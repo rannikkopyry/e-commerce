@@ -10,17 +10,19 @@ import {
   Cart,
   Checkout,
   Glidewaxes,
-  Toppings,
   Gripwaxes,
-  Accessories,
   About,
   Contact,
   Whyus,
   Search,
   TermsAndConditions,
   PrivacyPolicy,
+  Rotokit,
+  OtherProducts,
+  ProductShowcase,
 } from "./components";
 import { commerce } from "./lib/commerce";
+import './app.css';
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -132,21 +134,28 @@ const App = () => {
               handleUpdateCartQty
             />
             </Route>
-            <Route exact path="/products?categoryName=luistovoiteet">
+             <Route exact path="/products/:id">
+            <ProductShowcase
+              categories={categories}
+              onAddToCart={handleAddToCart}
+              handleUpdateCartQty
+            />
+            </Route>
+            <Route exact path="/luistovoiteet">
               <Glidewaxes
                 categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route exact path="/pinnoitteet">
-              <Toppings
+            <Route exact path="/rotokit">
+              <Rotokit
                 categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
               />
             </Route>
-            <Route exact path="/gripwaxes">
+            <Route exact path="/pitovoiteet">
               <Gripwaxes
                 categories={categories}
                 onAddToCart={handleAddToCart}
@@ -154,7 +163,7 @@ const App = () => {
               />
             </Route>
             <Route exact path="/muut">
-              <Accessories
+              <OtherProducts
                 categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty

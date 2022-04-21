@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 
 
-const Glidewaxes = ({ categories, onAddToCart }) => {
+const Rotokit = ({ categories, onAddToCart }) => {
   const classes = useStyles();
 
   console.log(categories)
@@ -16,7 +16,7 @@ const Glidewaxes = ({ categories, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {categories.map((category, index) => {
-        if (index === 3) {
+        if (index === 0) {
           return (
             <>
             <Typography variant="h4" className={classes.categoryTitle}>
@@ -37,4 +37,4 @@ const Glidewaxes = ({ categories, onAddToCart }) => {
   );
 };
 
-export default Glidewaxes;
+export default Rotokit;

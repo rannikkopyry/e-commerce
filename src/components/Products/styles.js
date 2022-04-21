@@ -7,10 +7,14 @@ export default makeStyles((theme) => ({
     width: "100vw",
     height: "100vh",
     backgroundColor: "#d7f542",
+    fontFamily: "font-family: 'Arimo', sans-serif",
   },
   title: {
     textAlign: "center",
     marginTop: "100px",
+  },
+  categoryTitle: {
+    marginBottom: "25px",
   },
   toolbar: theme.mixins.toolbar,
   content: {

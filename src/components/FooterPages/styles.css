@@ -1,3 +1,16 @@
 .container {
   margin: 90px 50px 50px 50px;
+  max-width: 100vw;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style: circle;
+}
+
+li{
+  align-items: left;
+  text-align: left;
 }

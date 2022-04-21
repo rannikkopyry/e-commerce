@@ -3,21 +3,24 @@ import useStyles from "./styles";
 import Grid from "@material-ui/core/Grid";
 import Product from "../Products/Product/Product";
 import { Typography } from "@material-ui/core";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const Homepage = ({ categories, onAddToCart }) => {
   const classes = useStyles();
 
   console.log(categories);
-  if (!categories.length) return <p>Loading...</p>;
+  if (!categories.length) return <LoaderSpinner />;
 
   return (
     <>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar}>
+          <h1 className={classes.title}>Odotetut Yes Skiwax-voiteet ja tuotteet nyt Suomessa</h1>
+        </div>
         {categories.map((category) => {
           return (
             <>
-            <Typography variant="h4">
+            <Typography variant="h4" className={classes.categoryTitle}>
               {category.name}
             </Typography>
             <Grid container justify="center" spacing={4}>
