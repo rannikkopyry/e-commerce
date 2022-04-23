@@ -9,26 +9,25 @@ import {
   Typography,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Search from "../Search/Search";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { purple } from "@mui/material/colors";
+import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
 
-const PrimarySearchAppBar = ({ totalItems, products }) => {
+const PrimarySearchAppBar = ({
+  totalItems,
+  categories,
+  menuOpen,
+  setMenuOpen,
+  items,
+  addProduct,
+}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
+  const [searchResult, setSearchResult] = useState("");
 
   const open = Boolean(anchorEl);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -63,6 +62,21 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
         </IconButton>
         <p>Cart</p>
       </MenuItem>
+      <MenuItem>
+        <MenuItem>
+          <IconButton
+            component={Link}
+            to="/cart"
+            aria-label="Show cart items"
+            color="inherit"
+          >
+            <Badge badgeContent={totalItems} color="secondary">
+              <MenuIcon />
+            </Badge>
+          </IconButton>
+          <p>Cart</p>
+        </MenuItem>
+      </MenuItem>
     </Menu>
   );
 
@@ -78,7 +92,6 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
     "&:hover": {
       boxShadow: "none",
       color: "#C83532",
-
     },
     "&:active": {
       boxShadow: "0 0 0 0.2rem #C83532",
@@ -91,75 +104,93 @@ const PrimarySearchAppBar = ({ totalItems, products }) => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar} color="inherit">
-        <Toolbar>
-          <Typography
-            component={Link}
-            to="/"
-            variant="h6"
-            className={classes.title}
-            color="inherit"
-          >
-            <img
-              src={logo}
-              alt="Yesskiwax logo"
-              height="45px"
-              className={classes.image}
-            />
-          </Typography>
-          <div className={classes.menuitem}>
-            <BootstrapButton component={Link} id="basic-button" to="/">
-              Etusivu
-            </BootstrapButton>
-          </div>
-          <div className={classes.menuitem}>
+      <div className={"topbar " + (menuOpen && "active")}>
+        <AppBar position="fixed" className={classes.appBar} color="inherit">
+          <Toolbar>
+            <Typography
+              component={Link}
+              to="/"
+              variant="h6"
+              className={classes.title}
+              color="inherit"
+            >
+              <img
+                src={logo}
+                alt="Yesskiwax logo"
+                height="45px"
+                className={classes.image}
+              />
+            </Typography>
+            <div className={classes.menuitem}>
+              <BootstrapButton component={Link} id="basic-button" to="/">
+                Etusivu
+              </BootstrapButton>
+            </div>
+            <div className={classes.menuitem}>
+              <div className={classes.menuitem}>
+                <BootstrapButton
+                  component={Link}
+                  id="basic-button"
+                  to="/luistovoiteet"
+                >
+                  Luistovoiteet
+                </BootstrapButton>
+              </div>
+            </div>
             <div className={classes.menuitem}>
               <BootstrapButton
                 component={Link}
                 id="basic-button"
-                to="/luistovoiteet"
+                to="/pitovoiteet"
               >
-                Luistovoiteet
+                Pitovoiteet
               </BootstrapButton>
             </div>
-          </div>
-          <div className={classes.menuitem}>
-            <BootstrapButton component={Link} id="basic-button" to="/pitovoiteet">
-              Pitovoiteet
-            </BootstrapButton>
-          </div>
-          <div className={classes.menuItem}>
-            <BootstrapButton component={Link} id="basic-button" to="/rotokit">
-              Roto Kit
-            </BootstrapButton>
-          </div>
-          <div className={classes.menuitem}>
-            <BootstrapButton component={Link} id="basic-button" to="/muut">
-              Muut tuotteet
-            </BootstrapButton>
-          </div>
-          <div className={classes.menuitem}>
-            <BootstrapButton component={Link} id="basic-button" to="/yhteystiedot">
-              Yhteystiedot
-            </BootstrapButton>
-          </div>
-          <Search placeholder="Etsi tuotteita" data={products} />
+            <div className={classes.menuItem}>
+              <BootstrapButton component={Link} id="basic-button" to="/rotokit">
+                Roto Kit
+              </BootstrapButton>
+            </div>
+            <div className={classes.menuitem}>
+              <BootstrapButton component={Link} id="basic-button" to="/muut">
+                Muut tuotteet
+              </BootstrapButton>
+            </div>
+            <div className={classes.menuitem}>
+              <BootstrapButton
+                component={Link}
+                id="basic-button"
+                to="/yhteystiedot"
+              >
+                Yhteystiedot
+              </BootstrapButton>
+            </div>
+            <div className={classes.search}>
+              <FilterProduct
+                placeholder="Etsi tuotteita"
+                categories={categories}
+                searchResult={searchResult}
+                setSearchResult={setSearchResult}
+                addProduct={addProduct}
+              />
+            </div>
+            <div className={classes.grow} />
 
-          <div className={classes.grow} />
-          <div className={classes.button}>
-            <IconButton
-              component={Link}
-              to="/cart"
-              aria-label="Show cart items"
-              color="inherit"
-            >
-              <Badge badgeContent={totalItems} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
+            <div className={classes.button}>
+              <IconButton
+                component={Link}
+                to="/cart"
+                aria-label="Show cart items"
+                color="inherit"
+              >
+                <Badge badgeContent={totalItems} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
       {renderMobileMenu}
     </>
   );

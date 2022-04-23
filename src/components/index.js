@@ -10,7 +10,7 @@ export { default as Accessories } from "./Accessories/Accessories";
 export { default as About } from "./About/About";
 export { default as Whyus } from "./Whyus/Whyus";
 export { default as Contact } from "./Contact/Contact";
-export { default as Search } from "./Search/Search";
+export { default as Search } from "./FilterProduct/FilterProduct";
 export { default as Footer } from "./Footer/Footer";
 export { default as PrivacyPolicy } from "./FooterPages/PrivacyPolicy";
 export { default as TermsAndConditions } from "./FooterPages/TermsAndConditions";

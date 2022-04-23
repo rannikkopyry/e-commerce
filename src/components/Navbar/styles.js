@@ -35,6 +35,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
   },
   search: {
+    display: "flex",
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -69,11 +70,5 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "20ch",
     },
-  },
-  popover: {
-    pointerEvents: "none",
-  },
-  popoverContent: {
-    pointerEvents: "auto",
   },
 }));

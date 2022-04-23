@@ -3,14 +3,14 @@ import Product from "./Product/Product";
 import useStyles from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
-
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const Rotokit = ({ categories, onAddToCart }) => {
   const classes = useStyles();
 
   console.log(categories)
 
-  if (!categories.length) return <p>Loading...</p>;
+  if (!categories.length) return <LoaderSpinner />;
 
   return (
     <main className={classes.content}>

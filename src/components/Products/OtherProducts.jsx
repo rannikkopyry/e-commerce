@@ -3,6 +3,8 @@ import Product from "./Product/Product";
 import useStyles from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
+
 
 
 const OtherProducts = ({ categories, onAddToCart }) => {
@@ -10,7 +12,7 @@ const OtherProducts = ({ categories, onAddToCart }) => {
 
   console.log(categories)
 
-  if (!categories.length) return <p>Loading...</p>;
+  if (!categories.length) return <LoaderSpinner />;
 
   return (
     <main className={classes.content}>
