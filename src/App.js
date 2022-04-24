@@ -119,6 +119,7 @@ const App = () => {
           totalItems={cart.total_items}
           handleDrawerToggle={handleDrawerToggle}
         />
+        <div className="content">
         <Switch>
           <Route exact path="/">
             <Homepage
@@ -201,6 +202,7 @@ const App = () => {
             <TermsAndConditions />
           </Route>
         </Switch>
+        </div>
       </div>
       <Footer/>
     </Router>

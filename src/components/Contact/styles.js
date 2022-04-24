@@ -8,7 +8,6 @@ export default makeStyles((theme) => ({
     padding: "0",
     width: '100vw',
     height: "100vh",
-    backgroundColor: "white",
   },
   title: {
       marginTop: "100px",

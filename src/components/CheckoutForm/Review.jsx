@@ -3,7 +3,7 @@ import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
 
 const Review = ({ checkoutToken }) => (
   <>
-    <Typography variant="h6" gutterBottom>Order summary</Typography>
+    <Typography variant="h6" gutterBottom>Tilauksen yhteenveto</Typography>
     <List disablePadding>
       {checkoutToken.live.line_items.map((product) => (
         <ListItem style={{ padding: '10px 0' }} key={product.name}>

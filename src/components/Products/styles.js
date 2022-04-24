@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     padding: "0",
     width: "100vw",
     height: "100vh",
-    backgroundColor: "#d7f542",
     fontFamily: "font-family: 'Arimo', sans-serif",
   },
   title: {
@@ -19,7 +18,6 @@ export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
   root: {

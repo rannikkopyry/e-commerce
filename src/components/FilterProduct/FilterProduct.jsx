@@ -10,6 +10,9 @@ import {
   List,
   ListSubheader,
   ListItemText,
+  FormControl,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -25,6 +28,8 @@ const FilterProduct = ({
   categories,
   searchResult,
   setSearchResult,
+  category,
+  onAddToCart,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
   const [keyword, setKeyword] = useState("");
@@ -65,13 +70,15 @@ const FilterProduct = ({
           setSearchResult([]);
           return;
         }
-        setResultMessage("");
+        setResultMessage();
         setSearchResult(data);
       } catch (error) {
         setSearchResult([]);
       }
     }
   };
+
+  console.log({ searchResult });
 
   return (
     <div className="filter-bar">
@@ -93,38 +100,15 @@ const FilterProduct = ({
           </IconButton>
         </Paper>
         {resultMessage && <p className="result-message">{resultMessage}</p>}
-        {searchResult.lenght && (
+         {searchResult.lenght && (
           <div className="result-message">
-            {searchResult.map((product) => {
-              return (
-                <List
-                  className="result-list"
-                  sx={{
-                    width: "100%",
-                    maxWidth: 360,
-                    bgcolor: "background.paper",
-                    position: "relative",
-                    overflow: "auto",
-                    maxHeight: 300,
-                    "& ul": { padding: 0 },
-                  }}
-                  subheader={<li />}
-                >
-                  {searchResult.map((product) => (
-                    <li key={product.id}>
-                      <ul>
-                        <ListSubheader>{`I'm sticky ${product.id}`}</ListSubheader>
-                        {searchResult.map((product) => (
-                          <ListItem product={product} addProduct={addProduct} key={`item-${product.id}-${product}`}>
-                            <ListItemText><li>{product.name}</li></ListItemText>
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </List>
-              );
-            })}
+            <Grid container spacing={4}>
+              {searchResult.map((product)=> (
+                <Grid key={product.id} item xs={12} sm={6} md={4}>
+                  <Product product={product} addProduct={addProduct}/>
+                </Grid>
+              ))}
+            </Grid>
           </div>
         )}
       </Container>
