@@ -10,6 +10,10 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
+    overflow: "visible",
+    position: "absolute",
+    zIndex: "1",
+    height: "70px",
   },
   title: {
     flexGrow: 1,

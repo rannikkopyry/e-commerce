@@ -1,8 +1,8 @@
-.filter-bar{
+.filter-bar {
   padding: 10px;
 }
 
-.filter-bar .root{
+.filter-bar .root {
   padding: 2px 4px;
   display: flex;
   align-items: center;
@@ -21,10 +21,21 @@
   display: none;
 }
 
-.result-message{
-  margin: 0;
+.form{
+  display: block;
+}
+
+.result-message {
+  top: 150px;
+  margin-top: 50px;
   font-size: 20px;
   padding-top: 20px;
   color: black;
   background-color: white;
+  position: relative;
+  z-index: 999;
+}
+
+.filterbar .result-message .image img{
+  max-width: 50px;
 }

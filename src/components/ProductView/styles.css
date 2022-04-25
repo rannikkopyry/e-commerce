@@ -1,13 +1,16 @@
 .MuiContainer-root.product-view {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     margin: 150px 0 100px 0;
   }
   
   .product-view .image-wrapper img {
-    max-width: 700px;
+    max-width: 70vh;
     max-height: 70vh;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
   }
   
   .product-view .text {
@@ -35,7 +38,7 @@
   
   .MuiContainer-root.product-view .custom-button {
     color: #000;
-    background-color: #bb86fc;
+    background-color: blue;
   }
   
   .MuiContainer-root.product-view .custom-button:hover {
@@ -47,8 +50,8 @@
   }
   
   .MuiContainer-root.product-view .increase-product-quantity {
-    background-color: #03dac5;
-    border-color: #03dac5;
+    background-color: #ffff;
+    border-color: #ffff;
   }
   
   .product-view .MuiGrid-root .MuiGrid-item {

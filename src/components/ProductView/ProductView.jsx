@@ -73,7 +73,7 @@ const ProductView = ({ item, onAddToCart }) => {
             </Grid>
             <Grid>
               <Typography className="quantity" variant="h3">
-                Quantity: {quantity}
+                Kpl: {quantity}
               </Typography>
             </Grid>
             <Grid item xs={12}>

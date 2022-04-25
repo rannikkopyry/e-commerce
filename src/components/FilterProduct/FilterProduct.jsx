@@ -69,7 +69,7 @@ const FilterProduct = ({
         console.log({ data });
 
         if (!data) {
-          setResultMessage("No result match");
+          setResultMessage("Ei tuloksia hakusanalla");
           setSearchResult([]);
           return;
         }
@@ -95,8 +95,8 @@ const FilterProduct = ({
           <InputBase
             className="input"
             onChange={handleInputChange}
-            placeholder="Search for a product"
-            inputProps={{ "aria-label": "Search for a product" }}
+            placeholder="Kirjoita hakusana"
+            inputProps={{ "aria-label": "Kirjoita hakusana" }}
           />
           <IconButton type="submit" aria-label="search">
             <Search />
@@ -110,7 +110,12 @@ const FilterProduct = ({
                 <Link to={`/product-view/${product.id}`}>
                 <ListItem key={product.id} disablePadding>
                   <ListItemButton>
+                    <div className="image">
+                      <img src={product.image.url} alt="Product image" />
+                    </div>
                     <Typography>{product.name}</Typography>
+                    <Typography>€{product.price.formatted}</Typography>
+
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>

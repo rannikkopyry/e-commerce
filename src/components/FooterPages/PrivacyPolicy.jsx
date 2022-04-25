@@ -10,74 +10,74 @@ const PrivacyPolicy = () => {
       <div className="text">
         <h2>Yleistä</h2>
         <p>
-          Verkkokauppa.com on sitoutunut suojaamaan asiakkaidensa yksityisyyttä
+          Less Friction Oy on sitoutunut suojaamaan asiakkaidensa yksityisyyttä
           ja tarjoaa mahdollisuuden vaikuttaa tietojen käsittelyyn;
           tilinhallinta-sivulla voit halutessasi rajata tietojesi käyttöä. Tällä
           tietosuojaselosteella informoimme asiakkaitamme heidän
           henkilötietojensa käsittelystä. Asiakkaan on hyväksyttävä tämän
-          tietosuojaselosteen ehdot käyttääkseen Verkkokauppa.comin palveluita.
+          tietosuojaselosteen ehdot käyttääkseen Less Friction Oy:n palveluita.
           Keräämämme tiedot voidaan jakaa käyttäjän antamiin, verkkopalveluiden
           käytöstä havannoituihin sekä analytiikan avulla johdettuihin
           tietoihin. Käytämme tietoja:
         </p>
         <ul>
-        <li>Helppokäyttöisen ja turvallisen palvelun toimittamiseen</li>
-        <li>Hyvän asiakaskokemuksen tarjoamiseen</li>
-        <li>Tuotesuositusten ja markkinoinnin parantamiseen</li>
-        <li>Asiakaspalvelun ja verkkokaupan kehittämiseen</li>
+        <li>- Helppokäyttöisen ja turvallisen palvelun toimittamiseen</li>
+        <li>- Hyvän asiakaskokemuksen tarjoamiseen</li>
+        <li>- Tuotesuositusten ja markkinoinnin parantamiseen</li>
+        <li>- Asiakaspalvelun ja verkkokaupan kehittämiseen</li>
         </ul>
         <h2>Rekisterinpitäjä ja sen yhteystiedot</h2>
         <p>Käsiteltävien henkilötietojen rekisterinpitäjänä toimii:</p>
         <p>
-          Verkkokauppa.com Oyj (Y-tunnus: 1456344-5) Tyynenmerenkatu 11 00220
-          Helsinki
+          Less Friction Oy (Y-tunnus: 1456344-5) Lampikatu 4 C1 88610
+          Vuokatti
         </p>
         <p>
           Tietosuojasta ja henkilötietojen käsittelystä voit kysyä lisää
-          sähköpostilla: tietosuoja@verkkokauppa.com
+          sähköpostilla: info@yesskiwax.fi
         </p>
         <h2>Mitä tietoja minusta voidaan kerätä?</h2>
         <ul>
-          <li>Käyttäjän itsensä antamat tai henkilön tunnistavat tiedot</li>
-          <li>Tunnistamistiedot, kuten nimi</li>
+          <li>- Käyttäjän itsensä antamat tai henkilön tunnistavat tiedot</li>
+          <li>- Tunnistamistiedot, kuten nimi</li>
           <li>
-            Henkilötunnus asiakkaan tunnistamiseksi luottosopimusta tehtäessä
+            - Henkilötunnus asiakkaan tunnistamiseksi luottosopimusta tehtäessä
           </li>
           <li>
-            Passitiedot tai vastaavat Tullin vaatimat tiedot tilattaessa
+            - Passitiedot tai vastaavat Tullin vaatimat tiedot tilattaessa
             tuotteita tai palveluita verottomana Suomen ulkopuolelta
           </li>
-          <li>Yhteystiedot, kuten osoite, sähköpostiosoite ja puhelinnumero</li>
+          <li>- Yhteystiedot, kuten osoite, sähköpostiosoite ja puhelinnumero</li>
           <li>
-            Maksutiedot, mukaan lukien luottosopimukset ja muut laskutustiedot
+            - Maksutiedot, mukaan lukien luottosopimukset ja muut laskutustiedot
           </li>
           <li>
-            Asiakkaan suostumuksella sijaintitiedot, joita käytetään
+            - Asiakkaan suostumuksella sijaintitiedot, joita käytetään
             toimitusajan arviointiin
           </li>
           <li>
-            Google-, Facebook- tai Microsoft-kirjautumiseen käytetty
+            - Google-, Facebook- tai Microsoft-kirjautumiseen käytetty
             sähköpostiosoite ja varmenne
           </li>
           <li>
-            Palvelujen käytöstä havainnoidut ja analytiikan avulla johdetut
+            - Palvelujen käytöstä havainnoidut ja analytiikan avulla johdetut
             tiedot
           </li>
-          <li>Ostoshistoria, mm. tilatut tuotteet ja niiden hintatiedot</li>
-          <li>Toimitustiedot, kuten valittu toimitustapa ja toimitusosoite</li>
-          <li>Tuotearvostelut</li>
+          <li>- Ostoshistoria, mm. tilatut tuotteet ja niiden hintatiedot</li>
+          <li>- Toimitustiedot, kuten valittu toimitustapa ja toimitusosoite</li>
+          <li>- Tuotearvostelut</li>
           <li>
-            Verkkokaupan käyttö- ja selaustiedot sekä päätelaitteen
+            - Verkkokaupan käyttö- ja selaustiedot sekä päätelaitteen
             tunnistetiedot
           </li>
           <li>
-            Tuotesuositus- ja muut kohdennettuun sisältöön käytetyt tiedot ja
+            - Tuotesuositus- ja muut kohdennettuun sisältöön käytetyt tiedot ja
             tunnisteet
           </li>
         </ul>
         <p>
           Tunniste-, yhteys- ja maksutietojen antaminen on pakollista ostaessasi
-          Verkkokauppa.comista Internetin kautta. Tietojen pääasiallinen lähde
+          yesskiwax.fi:sta Internetin kautta. Tietojen pääasiallinen lähde
           on käyttäjä itse, minkä lisäksi saatamme saada lisätietoja
           yhteistyökumppaneiltamme, esimerkiksi luottopalvelujen tarjoajalta.
           Kolmansilta osapuolilta saamistamme henkilötiedoista ilmoitamme
@@ -88,20 +88,20 @@ const PrivacyPolicy = () => {
         <h2>Mihin henkilötietojani käytetään?</h2>
         <p>Henkilötietoja käytetään: </p>
         <ul>
-          <li>Asiakkuuden ylläpitämiseen</li>
-          <li>Tilausten toimitukseen, käsittelyyn ja arkistointiin</li>
-          <li>Verkkokauppa.comin toiminnan ja palveluiden kehittämiseen</li>
-          <li>Asiakaskokemuksen parantamiseen</li>
-          <li>Analytiikkaan ja tilastollisiin tarkoituksiin</li>
+          <li>- Asiakkuuden ylläpitämiseen</li>
+          <li>- Tilausten toimitukseen, käsittelyyn ja arkistointiin</li>
+          <li>- Verkkokauppa.comin toiminnan ja palveluiden kehittämiseen</li>
+          <li>- Asiakaskokemuksen parantamiseen</li>
+          <li>- Analytiikkaan ja tilastollisiin tarkoituksiin</li>
           <li>
-            Henkilökohtaisemman kohdennetun sisällön ja markkinoinnin
+            - Henkilökohtaisemman kohdennetun sisällön ja markkinoinnin
             tuottamiseen
           </li>
-          <li>Väärinkäytösten estämiseen</li>
-          <li>Paremman asiakaspalvelun tarjoamiseen</li>
+          <li>- Väärinkäytösten estämiseen</li>
+          <li>- Paremman asiakaspalvelun tarjoamiseen</li>
         </ul>
         <p>
-          Tietoja käsitellään asiakkaan ja Verkkokauppa.comin väliseen
+          Tietoja käsitellään asiakkaan ja Less Friction Oy:n väliseen
           asiakassuhteeseen, sopimukseen, sivuston käyttöön, asiakkaan
           erilliseen nimenomaiseen suostumukseen tai lainsäädännön
           velvoitteisiin perustuen.
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
           Kaikki henkilötiedot ovat suojattu asiattomalta pääsyltä ja vahingossa
           tai laittomasti tapahtuvalta tietojen hävittämiseltä, muuttamiselta,
           luovuttamiselta, siirtämiseltä tai muulta laittomalta
-          käsittelemiseltä. Verkkokauppa.com säilyttää asiakastietoja
+          käsittelemiseltä. Less Friction Oy säilyttää asiakastietoja
           EU-alueella. Konesalit ja kaupan järjestelmien tekninen sekä
           prosessien tietoturva ovat erittäin korkealla tasolla. Yrityksessä on
           käytössä ISO 27001:een pohjautuva tietoturvan hallintajärjestelmä.
@@ -135,8 +135,8 @@ const PrivacyPolicy = () => {
           ja muun lainsäädännön asettamat vaatimukset. Lisää kolmansista
           osapuolista voit lukea kappaleesta "Luovutetaanko henkilötietojani
           kolmansille osapuolille?". Tietojen käsittelystä vastuussa oleva
-          yritys: Verkkokauppa.com Oyj (Y-tunnus: 1456344-5) Tyynenmerenkatu 11
-          00220 Helsinki
+          yritys: Less Friction Oy (Y-tunnus: 1456344-5) Lampikatu 4 C1 
+          88610 Vuokatti
         </p>
         <h2>Kuinka kauan tietojani säilytetään?</h2>
         <p>
@@ -147,7 +147,7 @@ const PrivacyPolicy = () => {
           kuluttajakauppaa koskevien vastuiden, toteuttamiseksi ja niiden
           asianmukaisen toteuttamisen osoittamiseksi. Kun teet tilauksen
           noutopisteeseen myymälässä ilman asiakastiliä, tallennetaan antamasi
-          tiedot Verkkokauppa.comin järjestelmään, jotta voimme pitää sinut ajan
+          tiedot yesskiwax.fi:n järjestelmään, jotta voimme pitää sinut ajan
           tasalla tilauksestasi. Yhteystietosi poistetaan, kun tilaus on
           käsitelty. Asiakkaan pyynnöstä häntä koskeva henkilötieto voidaan
           poistaa tai anonymisoida Verkkokauppa.comin järjestelmistä. Poisto ja
@@ -158,17 +158,17 @@ const PrivacyPolicy = () => {
         </p>
         <ul>
           <li>
-            Kirjanpitolaki määrittelee tiedolle pidempiä säilytysaikoja
+            - Kirjanpitolaki määrittelee tiedolle pidempiä säilytysaikoja
             riippumatta siitä sisältääkö aineisto henkilötietoja tai ei
           </li>
-          <li>Kuluttajakauppaa koskevien vastuiden täyttäminen</li>
+          <li>- Kuluttajakauppaa koskevien vastuiden täyttäminen</li>
           <li>
-            Järjestelmien lokitietoa kerätään ja säilytetään lain edellyttämällä
+            - Järjestelmien lokitietoa kerätään ja säilytetään lain edellyttämällä
             tavalla, jotta voimme tarjota lainmukaisen ja turvallisen
             verkkokaupan asiakkaillemme
           </li>
           <li>
-            Riittävien varmuuskopioiden ottaminen kaupan tietokannoista ja
+            - Riittävien varmuuskopioiden ottaminen kaupan tietokannoista ja
             järjestelmistä tietojen turvaamiseksi, virhetilanteiden
             korjaamiseksi ja tietoturvan sekä jatkuvuuden varmentamiseksi
           </li>
@@ -177,15 +177,15 @@ const PrivacyPolicy = () => {
         <p>Asiakkaana sinulla on oikeus:</p>
         <ul>
           <li>
-            Saada pääsy itseäsi koskeviin henkilötietoihin, mukaan lukien oikeus
+            - Saada pääsy itseäsi koskeviin henkilötietoihin, mukaan lukien oikeus
             saada jäljennös sinua koskevista henkilötiedoista
           </li>
           <li>
-            Pyytää itseäsi koskevien henkilötietojen oikaisemista tai
+            - Pyytää itseäsi koskevien henkilötietojen oikaisemista tai
             poistamista
           </li>
           <li>
-            Tietyin edellytyksin pyytää käsittelyn rajoittamista tai vastustaa
+            - Tietyin edellytyksin pyytää käsittelyn rajoittamista tai vastustaa
             henkilötietojen käsittelyä
           </li>
         </ul>
@@ -206,9 +206,9 @@ const PrivacyPolicy = () => {
         </p>
         <h2>Kuinka saan järjestelmään itsestäni tallennetut tiedot?</h2>
         <p>
-          Voit pyytää Verkkokauppa.comin järjestelmiin tallennetut tiedot
+          Voit pyytää yesskiwax.fi:n järjestelmiin tallennetut tiedot
           tilinhallinnasta tai ottamalla yhteyttä sähköpostilla:
-          tietosuoja@verkkokauppa.com
+          info@yesskiwax.fi
         </p>
         <p>
           "Mitä tietoja minusta voidaan kerätä?" kappaleen alta löydät tarkempaa
@@ -216,13 +216,13 @@ const PrivacyPolicy = () => {
         </p>
         <h2>Miten voin vaikuttaa tietojeni käyttöön?</h2>
         <p>
-          Verkkokauppa.com on sitoutunut tarjoamaan asiakkailleen
+          Less Friction Oy on sitoutunut tarjoamaan asiakkailleen
           mahdollisuuksia vaikuttaa tietojensa käsittelyyn. Voit itse päättää
           sinulle kohdistetusta markkinoinnista, lisäarvopalveluista ja ottaa
           tai olla ottamatta vastaan erilaisia markkinointiviestejä. Vaihtoehdot
           löydät tilinhallinta-sivulta. Kehitämme palveluamme jatkuvasti, joten
           toimintoja voidaan lisätä, muuttaa tai poistaa. Asiakas voi myös koska
-          tahansa lopettaa asiakastilinsä ja pyytää Verkkokauppa.comia
+          tahansa lopettaa asiakastilinsä ja pyytää Less Friction Oy:tä
           poistamaan omat tietonsa ottamalla yhteyttä asiakaspalveluumme. Huom!
           Joissain tapauksissa kaikkea tietoa ei voida poistaa ja lainsäädäntö
           voi vaatia säilyttämään osan asiakkaaseen liittyvästä tiedosta.
@@ -244,40 +244,40 @@ const PrivacyPolicy = () => {
           sallittua. Välitämme tietoja seuraaville kolmansille osapuolille:
         </p>
         <ul>
-          <li>Analytiikka- ja tilastointikumppaneille</li>
-          <li>Tuotesuositus- ja personointikumppaneille</li>
+          <li>- Analytiikka- ja tilastointikumppaneille</li>
+          <li>- Tuotesuositus- ja personointikumppaneille</li>
           <li>
-            Sähköpostimarkkinointikumppaneille, jos asiakas on sallinut
+            - Sähköpostimarkkinointikumppaneille, jos asiakas on sallinut
             viikkokirjeen, selaushistoriaan perustuvan viestinnän tai
             tuotearvostelupyynnöt
           </li>
-          <li>SMS-kumppanille, kun tekstiviestien lähetys on sallittu</li>
+          <li>- SMS-kumppanille, kun tekstiviestien lähetys on sallittu</li>
           <li>
-            Kuljetusliikkeelle, jos valittu toimitustapa on kuljetus
+            - Kuljetusliikkeelle, jos valittu toimitustapa on kuljetus
             noutopisteeseen, lähimpään postiin tai perille asti
           </li>
-          <li>Maksunvälittäjälle maksukortilla maksaessa</li>
+          <li>- Maksunvälittäjälle maksukortilla maksaessa</li>
           <li>
-            Luotonmyöntäjälle, asiakkaan valitessa maksutavaksi luottoyhtiön
+            - Luotonmyöntäjälle, asiakkaan valitessa maksutavaksi luottoyhtiön
             laskun tai osamaksun
           </li>
           <li>
-            Laskuoperaattorille, kun maksutavaksi valitaan Verkkokauppa.comin
+            - Laskuoperaattorille, kun maksutavaksi valitaan Verkkokauppa.comin
             oma lasku
           </li>
           <li>
-            Tuotteen toimittajalle, sähköisiä lisenssejä tai
+            - Tuotteen toimittajalle, sähköisiä lisenssejä tai
             suoratoimitustuotteita tilattaessa
           </li>
           <li>
-            Osalle huoltoyhtiöistä välitetään tilaukseen liittyviä tietoja
+            - Osalle huoltoyhtiöistä välitetään tilaukseen liittyviä tietoja
             huollon yhteydessä
           </li>
-          <li>Tullille, tuotteita verottomana ostettaessa</li>
-          <li>Perintäyhtiölle, laskujen erääntyessä ja siirtyessä perintään</li>
+          <li>- Tullille, tuotteita verottomana ostettaessa</li>
+          <li>- Perintäyhtiölle, laskujen erääntyessä ja siirtyessä perintään</li>
         </ul>
         <p>
-          Verkkokauppa.com huolehtii tietoja siirrettäessä ja käsiteltäessä
+          Less Friction Oy huolehtii tietoja siirrettäessä ja käsiteltäessä
           tietoturvan ja -suojan korkeasta tasosta EU:n tietosuoja-asetuksen
           mukaisesti. Kolmansien osapuolten tietojenkäsittelyn tason
           varmistuskeinoina ovat Euroopan komission hyväksymät
@@ -289,7 +289,7 @@ const PrivacyPolicy = () => {
         </p>
         <h2>Käytetäänkö kaupan sivuilla evästeitä ja mitä ne ovat?</h2>
         <p>
-          Verkkokauppa.com käyttää evästeitä (”cookies”) ja muita vastaavia
+          Yesskiwax.fi käyttää evästeitä (”cookies”) ja muita vastaavia
           tekniikoita, kuten selaimen paikallista varastoa (“local storage”).
           Evästeet ovat päätelaitteen selaimen ja palvelimen välisiä pieniä
           tekstitiedostoja. Evästeillä ja muilla tunnisteilla on määritetty
