@@ -19,10 +19,10 @@ import {
   PrivacyPolicy,
   Rotokit,
   OtherProducts,
-  ProductShowcase,
+  ProductView,
 } from "./components";
 import { commerce } from "./lib/commerce";
-import './app.css';
+import "./app.css";
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -53,6 +53,7 @@ const App = () => {
   };
 
   // Fetch cart
+  
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -120,27 +121,20 @@ const App = () => {
           handleDrawerToggle={handleDrawerToggle}
         />
         <div className="content">
-        <Switch>
-          <Route exact path="/">
-            <Homepage
-              categories={categories}
-              onAddToCart={handleAddToCart}
-              handleUpdateCartQty
-            />
-          </Route>
-          <Route exact path="/products">
-            <Products
-              categories={categories}
-              onAddToCart={handleAddToCart}
-              handleUpdateCartQty
-            />
+          <Switch>
+            <Route exact path="/">
+              <Homepage
+                categories={categories}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
-             <Route exact path="/products/:id">
-            <ProductShowcase
-              categories={categories}
-              onAddToCart={handleAddToCart}
-              handleUpdateCartQty
-            />
+            <Route exact path="/products">
+              <Products
+                categories={categories}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
             <Route exact path="/luistovoiteet">
               <Glidewaxes
@@ -168,43 +162,51 @@ const App = () => {
                 categories={categories}
                 onAddToCart={handleAddToCart}
                 handleUpdateCartQty
-             />
-          </Route>
-          <Route exact path="/yritys">
-            <About />
-          </Route>
-          <Route exact path="/miksimeidat">
-            <Whyus />
-          </Route>
-          <Route exact path="/yhteystiedot">
-            <Contact />
-          </Route>
-          <Route exact path="/cart">
-            <Cart
-              cart={cart}
-              onUpdateCartQty={handleUpdateCartQty}
-              onRemoveFromCart={handleRemoveFromCart}
-              onEmptyCart={handleEmptyCart}
-            />
-          </Route>
-          <Route path="/checkout" exact>
-            <Checkout
-              cart={cart}
-              order={order}
-              onCaptureCheckout={handleCaptureCheckout}
-              error={errorMessage}
-            />
-          </Route>
-          <Route exact path="/tietosuojaseloste">
-            <PrivacyPolicy />
-          </Route>
-          <Route exact path="/kayttoehdot">
-            <TermsAndConditions />
-          </Route>
-        </Switch>
+              />
+            </Route>
+            <Route exact path="/yritys">
+              <About />
+            </Route>
+            <Route exact path="/miksimeidat">
+              <Whyus />
+            </Route>
+            <Route exact path="/yhteystiedot">
+              <Contact />
+            </Route>
+            <Route exact path="/cart">
+              <Cart
+                cart={cart}
+                onUpdateCartQty={handleUpdateCartQty}
+                onRemoveFromCart={handleRemoveFromCart}
+                onEmptyCart={handleEmptyCart}
+              />
+            </Route>
+            <Route path="/checkout" exact>
+              <Checkout
+                cart={cart}
+                order={order}
+                onCaptureCheckout={handleCaptureCheckout}
+                error={errorMessage}
+              />
+            </Route>
+            <Route path="/product-view/:id" exact>
+              <ProductView
+                onUpdateCartQty={handleUpdateCartQty}
+                categories={categories}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
+            </Route>
+            <Route exact path="/tietosuojaseloste">
+              <PrivacyPolicy />
+            </Route>
+            <Route exact path="/kayttoehdot">
+              <TermsAndConditions />
+            </Route>
+          </Switch>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };

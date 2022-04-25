@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./styles";
+import { Link } from "react-router-dom";
 
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
@@ -17,15 +18,17 @@ const Product = ({ product, onAddToCart }) => {
 
   return (
     <Card className={classes.root}>
+      <Link to={`/product-view/${product.id}`}>
       <CardMedia
         className={classes.media}
         image={product.image.url}
         title={product.name}
       />
+      </Link>
       <CardContent>
         <div className={classes.cardContent}>
           <Typography gutterBottom variant="h6" component="h4" className={classes.title}>
-            <a href="/product/${id}">{product.name}</a>
+            <a href={`/product-view/${product.id}`}>{product.name}</a>
           </Typography>
           <Typography gutterBottom variant="h6" component="h4">
             €{product.price.formatted}

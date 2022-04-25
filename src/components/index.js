@@ -16,4 +16,4 @@ export { default as PrivacyPolicy } from "./FooterPages/PrivacyPolicy";
 export { default as TermsAndConditions } from "./FooterPages/TermsAndConditions";
 export { default as LoaderSpinner } from "./LoaderSpinner/LoaderSpinner";
 export { default as OtherProducts } from './Products/OtherProducts';
-export { default as ProductShowcase } from "./Products/ProductsShowcase";
+export { default as ProductView } from "./ProductView/ProductView";

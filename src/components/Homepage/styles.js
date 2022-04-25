@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
     marginTop: "100px",
   },
   categoryTitle: {
+    marginTop: "25px",
     marginBottom: "25px",
   },
   toolbar: theme.mixins.toolbar,
