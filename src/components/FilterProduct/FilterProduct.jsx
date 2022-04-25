@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 import "./styles.css";
 import {
-  Grid,
   Paper,
   Container,
   InputBase,
   IconButton,
-  ListItem,
-  List,
-  ListSubheader,
-  ListItemText,
-  FormControl,
-  Select,
-  MenuItem,
+  Typography,
 } from "@material-ui/core";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import { Search } from "@material-ui/icons";
 import SelectCategory from "./SelectCategory";
 import { commerce } from "../../lib/commerce";
 import Product from "../Products/Product/Product";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import { Link } from "react-router-dom";
 
-const defaultCategory = { id: 0, name: "Kaikki" };
 
 const FilterProduct = ({
   addProduct,
@@ -31,15 +27,11 @@ const FilterProduct = ({
   category,
   onAddToCart,
 }) => {
+  const defaultCategory = { id: 0, name: "Kaikki" };
+
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
   const [keyword, setKeyword] = useState("");
   const [resultMessage, setResultMessage] = useState("");
-
-  const handleSelectChange = (event) => {
-    const { value } = event.target;
-    const category = categories.find((cat) => cat.id === value);
-    setSelectedCategory(category);
-  };
 
   const handleInputChange = (event) => {
     if (!keyword || !event.target.value) {
@@ -48,6 +40,17 @@ const FilterProduct = ({
       setSelectedCategory(defaultCategory);
     }
     setKeyword(event.target.value);
+  };
+
+  const handleSelectChange = (event) => {
+    const { value } = event.target;
+    const category = categories.find((cat) => cat.id === value);
+
+    if (value === 0) {
+      setSelectedCategory(defaultCategory);
+    } else {
+      setSelectedCategory(category);
+    }
   };
 
   const onSubmit = async (e) => {
@@ -92,23 +95,28 @@ const FilterProduct = ({
           <InputBase
             className="input"
             onChange={handleInputChange}
-            placeholder="Etsi tuotteita"
-            inputProps={{ "aria-label": "Etsi tuotteita" }}
+            placeholder="Search for a product"
+            inputProps={{ "aria-label": "Search for a product" }}
           />
-          <IconButton type="submit" aria-label="etsi">
+          <IconButton type="submit" aria-label="search">
             <Search />
           </IconButton>
         </Paper>
         {resultMessage && <p className="result-message">{resultMessage}</p>}
-         {searchResult.lenght && (
-          <div className="result-message">
-            <Grid container spacing={4}>
-              {searchResult.map((product)=> (
-                <Grid key={product.id} item xs={12} sm={6} md={4}>
-                  <Product product={product} addProduct={addProduct}/>
-                </Grid>
+        {searchResult && (
+          <div>
+            <List container spacing={4} className="result-message">
+              {searchResult.map((product) => (
+                <Link to={`/product-view/${product.id}`}>
+                <ListItem key={product.id} disablePadding>
+                  <ListItemButton>
+                    <Typography>{product.name}</Typography>
+                    <ListItemText />
+                  </ListItemButton>
+                </ListItem>
+                </Link>
               ))}
-            </Grid>
+            </List>
           </div>
         )}
       </Container>
