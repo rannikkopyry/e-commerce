@@ -38,11 +38,12 @@
   
   .MuiContainer-root.product-view .custom-button {
     color: #000;
-    background-color: blue;
+    background-color: grey;
+    opacity: 1;
   }
   
   .MuiContainer-root.product-view .custom-button:hover {
-    color: #c9d1d9;
+    opacity: 0.8;
   }
   
   .MuiContainer-root.product-view .custom-button svg {

@@ -20,6 +20,7 @@ import {
   Rotokit,
   OtherProducts,
   ProductView,
+  CarouselFirst
 } from "./components";
 import { commerce } from "./lib/commerce";
 import "./app.css";
@@ -202,6 +203,13 @@ const App = () => {
             </Route>
             <Route exact path="/kayttoehdot">
               <TermsAndConditions />
+            </Route>
+            <Route>
+              <CarouselFirst
+                categories={categories}
+                onAddToCart={handleAddToCart}
+                handleUpdateCartQty
+              />
             </Route>
           </Switch>
         </div>

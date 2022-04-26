@@ -57,8 +57,8 @@ const ProductView = ({ item, onAddToCart }) => {
             dangerouslySetInnerHTML={createMarkup(product.description)}
           />
           <Typography variant="h3">Hinta: {product.price}</Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12}>
+          <Grid container spacing={4} lg={3}>
+            <Grid item xs={12} className="counter">
               <Button
                 size="small"
                 variant="contained"
@@ -101,6 +101,7 @@ const ProductView = ({ item, onAddToCart }) => {
             </Grid>
           </Grid>
         </Grid>
+       <Typography>{product.related_products}</Typography>
       </Grid>
     </Container>
   );

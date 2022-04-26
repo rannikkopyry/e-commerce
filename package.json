@@ -21,6 +21,7 @@
     "react-bootstrap": "^2.3.0",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.5",
+    "react-multi-carousel": "^2.8.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@chec/cli": "^1.3.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",

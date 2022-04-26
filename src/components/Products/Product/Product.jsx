@@ -30,7 +30,7 @@ const Product = ({ product, onAddToCart }) => {
           <Typography gutterBottom variant="h6" component="h4" className={classes.title}>
             <a href={`/product-view/${product.id}`}>{product.name}</a>
           </Typography>
-          <Typography gutterBottom variant="h6" component="h4">
+          <Typography gutterBottom variant="h6" component="h4" className={classes.price}>
             €{product.price.formatted}
           </Typography>
         </div>

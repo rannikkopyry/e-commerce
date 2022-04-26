@@ -25,4 +25,7 @@ export default makeStyles(() => ({
     justifyContent: 'space-between',
     maxHeight: '50px'
   },
+  price: {
+    color: "#C83532",
+  }
 })); 
