@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
-
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
 
@@ -38,47 +37,7 @@ const PrimarySearchAppBar = ({
 
   const mobileMenuId = "primary-search-account-menu-mobile";
 
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton
-          component={Link}
-          to="/cart"
-          aria-label="Show cart items"
-          color="inherit"
-        >
-          <Badge badgeContent={totalItems} color="secondary">
-            <ShoppingCart />
-          </Badge>
-        </IconButton>
-        <p>Cart</p>
-      </MenuItem>
-      <MenuItem>
-        <MenuItem>
-          <IconButton
-            component={Link}
-            to="/cart"
-            aria-label="Show cart items"
-            color="inherit"
-          >
-            <Badge badgeContent={totalItems} color="secondary">
-              <MenuIcon />
-            </Badge>
-          </IconButton>
-          <p>Cart</p>
-        </MenuItem>
-      </MenuItem>
-    </Menu>
-  );
-
+  
   const BootstrapButton = styled(Button)({
     boxShadow: "none",
     textTransform: "none",
@@ -177,8 +136,7 @@ const PrimarySearchAppBar = ({
             <div className={classes.grow} />
             <div className={classes.hamburger}>
               <IconButton
-                component={Link}
-                to="/cart"
+                onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Show cart items"
                 color="inherit"
               >
@@ -203,7 +161,6 @@ const PrimarySearchAppBar = ({
           </Toolbar>
         </AppBar>
       </div>
-      {renderMobileMenu}
     </>
   );
 };
