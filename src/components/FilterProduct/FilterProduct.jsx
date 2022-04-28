@@ -18,15 +18,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
 
-
-const FilterProduct = ({
-  addProduct,
-  categories,
-  searchResult,
-  setSearchResult,
-  category,
-  onAddToCart,
-}) => {
+const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
   const defaultCategory = { id: 0, name: "Kaikki" };
 
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
@@ -105,22 +97,34 @@ const FilterProduct = ({
         {resultMessage && <p className="result-message">{resultMessage}</p>}
         {searchResult && (
           <div>
-            <List container spacing={4} className="result-message">
+            <List container spacing={4} className="result-message-success">
+            <ul>
               {searchResult.map((product) => (
-                <Link to={`/product-view/${product.id}`}>
-                <ListItem key={product.id} disablePadding>
-                  <ListItemButton>
-                    <div className="image">
-                      <img src={product.image.url} alt="Product image" />
-                    </div>
-                    <Typography>{product.name}</Typography>
-                    <Typography>€{product.price.formatted}</Typography>
-
-                    <ListItemText />
-                  </ListItemButton>
-                </ListItem>
-                </Link>
+                <div>
+                    <li>
+                  <Link to={`/product-view/${product.id}`}>
+                    <ListItem
+                      key={product.id}
+                      disablePadding
+                      className="list-item"
+                    >
+                      <ListItemButton>
+                        <div className="image">
+                          <img src={product.image.url} alt="Product image" />
+                        </div>
+                        <ListItemText>
+                        <div className="text">
+                          <Typography>{product.name}</Typography>
+                          <Typography>€{product.price.formatted}</Typography>
+                        </div>
+                        </ListItemText>
+                      </ListItemButton>
+                    </ListItem>
+                  </Link>
+                  </li>
+                </div>
               ))}
+              </ul>
             </List>
           </div>
         )}

@@ -28,7 +28,6 @@ const PrimarySearchAppBar = ({
 }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [searchResult, setSearchResult] = useState("");
-
   const open = Boolean(anchorEl);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
@@ -106,6 +105,7 @@ const PrimarySearchAppBar = ({
     <>
       <div className={"topbar " + (menuOpen && "active")}>
         <AppBar position="fixed" className={classes.appBar} color="inherit">
+        
           <Toolbar>
             <Typography
               component={Link}
@@ -146,7 +146,7 @@ const PrimarySearchAppBar = ({
                 Pitovoiteet
               </BootstrapButton>
             </div>
-            <div className={classes.menuItem}>
+            <div className={classes.menuitem}>
               <BootstrapButton component={Link} id="basic-button" to="/rotokit">
                 Roto Kit
               </BootstrapButton>
@@ -175,6 +175,18 @@ const PrimarySearchAppBar = ({
               />
             </div>
             <div className={classes.grow} />
+            <div className={classes.hamburger}>
+              <IconButton
+                component={Link}
+                to="/cart"
+                aria-label="Show cart items"
+                color="inherit"
+              >
+                <Badge badgeContent={totalItems} color="secondary">
+                  <MenuIcon />
+                </Badge>
+              </IconButton>
+            </div>
 
             <div className={classes.button}>
               <IconButton

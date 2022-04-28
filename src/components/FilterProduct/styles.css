@@ -21,21 +21,31 @@
   display: none;
 }
 
-.form{
+.form {
   display: block;
 }
-
-.result-message {
-  top: 150px;
-  margin-top: 50px;
-  font-size: 20px;
-  padding-top: 20px;
-  color: black;
+.result-message-success ul {
+  position: absolute;
+  display: flex;
+  overflow: visible;
   background-color: white;
-  position: relative;
+  justify-content: left;
   z-index: 999;
 }
 
-.filterbar .result-message .image img{
-  max-width: 50px;
+
+.list-item {
+  height: 60px;
+}
+
+.image{
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.image img {
+  margin: auto 20px auto -30px;
+  width: 100px;
+  height: auto;
 }

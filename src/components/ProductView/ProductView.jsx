@@ -56,7 +56,7 @@ const ProductView = ({ item, onAddToCart }) => {
             variant="p"
             dangerouslySetInnerHTML={createMarkup(product.description)}
           />
-          <Typography variant="h3">Hinta: {product.price}</Typography>
+          <Typography variant="h3">Hinta: {product.price} <br />  <p>Alv. 24% sis. hintaan.</p></Typography>
           <Grid container spacing={4} lg={3}>
             <Grid item xs={12} className="counter">
               <Button

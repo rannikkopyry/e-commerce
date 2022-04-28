@@ -53,6 +53,7 @@
   .MuiContainer-root.product-view .increase-product-quantity {
     background-color: #ffff;
     border-color: #ffff;
+    margin: 10px;
   }
   
   .product-view .MuiGrid-root .MuiGrid-item {

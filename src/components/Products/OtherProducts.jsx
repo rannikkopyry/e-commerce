@@ -10,8 +10,6 @@ import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 const OtherProducts = ({ categories, onAddToCart }) => {
   const classes = useStyles();
 
-  console.log(categories)
-
   if (!categories.length) return <LoaderSpinner />;
 
   return (

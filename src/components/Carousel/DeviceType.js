@@ -17,7 +17,7 @@ const Index = ({ deviceType }) => {
         <Carousel deviceType={deviceType} />
       </Section>
       <Section>
-        <WithScrollbar />
+        <Navbar />
       </Section>
     </Fragment>
   );

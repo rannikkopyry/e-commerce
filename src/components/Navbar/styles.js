@@ -20,12 +20,19 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     textDecoration: "none",
+    width: "50px",
   },
   image: {
     marginRight: "5px",
   },
+
   menuitem: {
     color: "black",
+    alignItems: "left",
+    textAlign: "left",
+    [theme.breakpoints.down("sm")]: {
+      display:  "none",
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -33,10 +40,6 @@ export default makeStyles((theme) => ({
       display: "none",
     },
     color: "black",
-  },
-
-  grow: {
-    flexGrow: 1,
   },
   search: {
     display: "flex",
@@ -46,6 +49,13 @@ export default makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
+    [theme.breakpoints.down("sm")]: {
+      display:  "none",
+    },
+
+  grow: {
+    flexGrow: 1,
+  },
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
@@ -75,4 +85,9 @@ export default makeStyles((theme) => ({
       width: "20ch",
     },
   },
+  hamburger: {
+    [theme.breakpoints.up("sm")]: {
+      display:  "none",
+    },
+  }
 }));
