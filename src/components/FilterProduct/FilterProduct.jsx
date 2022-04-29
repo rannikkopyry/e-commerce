@@ -20,10 +20,11 @@ import { Link } from "react-router-dom";
 
 const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
   const defaultCategory = { id: 0, name: "Kaikki" };
-
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
   const [keyword, setKeyword] = useState("");
   const [resultMessage, setResultMessage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 
   const handleInputChange = (event) => {
     if (!keyword || !event.target.value) {
@@ -56,10 +57,6 @@ const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
           query: keyword,
           ...categoryId,
         });
-        console.log({ keyword });
-        console.log({ selectedCategory });
-        console.log({ data });
-
         if (!data) {
           setResultMessage("Ei tuloksia hakusanalla");
           setSearchResult([]);
@@ -98,32 +95,38 @@ const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
         {searchResult && (
           <div>
             <List container spacing={4} className="result-message-success">
-            <ul>
-              {searchResult.map((product) => (
-                <div>
+              <ul>
+                {searchResult.map((product) => (
+                  <div>
                     <li>
-                  <Link to={`/product-view/${product.id}`}>
-                    <ListItem
-                      key={product.id}
-                      disablePadding
-                      className="list-item"
-                    >
-                      <ListItemButton>
-                        <div className="image">
-                          <img src={product.image.url} alt="Product image" />
-                        </div>
-                        <ListItemText>
-                        <div className="text">
-                          <Typography>{product.name}</Typography>
-                          <Typography>€{product.price.formatted}</Typography>
-                        </div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                  </Link>
-                  </li>
-                </div>
-              ))}
+                      <Link to={`/product-view/${product.id}`}>
+                        <ListItem
+                          key={product.id}
+                          disablePadding
+                          className="list-item"
+                          onClick={toggle}
+                        >
+                          <ListItemButton onClick={toggle}>
+                            <div className="image">
+                              <img
+                                src={product.image.url}
+                                alt="Product image"
+                              />
+                            </div>
+                            <ListItemText>
+                              <div className="text">
+                                <Typography>{product.name}</Typography>
+                                <Typography>
+                                  €{product.price.formatted}
+                                </Typography>
+                              </div>
+                            </ListItemText>
+                          </ListItemButton>
+                        </ListItem>
+                      </Link>
+                    </li>
+                  </div>
+                ))}
               </ul>
             </List>
           </div>
