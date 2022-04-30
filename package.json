@@ -19,6 +19,7 @@
     "mdb-react-ui-kit": "^3.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^2.3.0",
+    "react-burger-menu": "^3.0.6",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.5",
     "react-multi-carousel": "^2.8.0",

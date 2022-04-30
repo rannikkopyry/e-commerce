@@ -16,6 +16,7 @@ import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
+import MobileMenu from "../Menu/MobileMenu";
 
 const PrimarySearchAppBar = ({
   totalItems,
@@ -135,16 +136,9 @@ const PrimarySearchAppBar = ({
             </div>
             <div className={classes.grow} />
             <div className={classes.hamburger}>
-              <IconButton
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Show cart items"
-                color="inherit"
-              >
-                <Badge badgeContent={totalItems} color="secondary">
-                  <MenuIcon />
-                </Badge>
-              </IconButton>
+            <MobileMenu right width={'100%'} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
             </div>
+
 
             <div className={classes.button}>
               <IconButton

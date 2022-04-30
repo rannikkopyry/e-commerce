@@ -16,7 +16,7 @@ const Gripwaxes = ({ categories, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {categories.map((category, index) => {
-        if (index === 2) {
+        if (index === 3) {
           return (
             <>
             <Typography variant="h4" className={classes.categoryTitle}>

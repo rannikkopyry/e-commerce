@@ -16,7 +16,7 @@ const Glidewaxes = ({ categories, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {categories.map((category, index) => {
-        if (index === 3) {
+        if (index === 4) {
           return (
             <>
             <Typography variant="h4" className={classes.categoryTitle}>

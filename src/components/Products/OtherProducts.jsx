@@ -16,7 +16,7 @@ const OtherProducts = ({ categories, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {categories.map((category, index) => {
-        if (index === 1) {
+        if (index === 2) {
           return (
             <>
             <Typography variant="h4" className={classes.categoryTitle}>

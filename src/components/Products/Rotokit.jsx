@@ -14,7 +14,7 @@ const Rotokit = ({ categories, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       {categories.map((category, index) => {
-        if (index === 0) {
+        if (index === 1) {
           return (
             <>
             <Typography variant="h4" className={classes.categoryTitle}>
