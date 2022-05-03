@@ -10221,6 +10221,14 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
+react-aria-offcanvas@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/react-aria-offcanvas/-/react-aria-offcanvas-1.4.3.tgz#ecd9c262c5ee2033da7c8643110c6f225fa519e8"
+  integrity sha512-5VarhZ9ihSopPiekS6nGs0T2Trs+lK4AFPPDWptGoeo1uYqwlZ8EIBzCl7oCLfjCYb4pqKkGX6eDEZakrUqPRQ==
+  dependencies:
+    prop-types "^15.7.2"
+    run-event-handler-once "^1.0.2"
+
 react-bootstrap@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.3.0.tgz#bb62143f9e4d2bf0839e3e1bc8dcff582925ad51"
@@ -10894,6 +10902,11 @@ run-async@^2.2.0, run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
   integrity sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==
+
+run-event-handler-once@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/run-event-handler-once/-/run-event-handler-once-1.0.2.tgz#4d85a9bf78859fdd76eb6796637c64b60067770c"
+  integrity sha512-ZCTACJVYODJ1Ver0WMfoIN8SKmln+TgJ0W17m/Ka7PMhHwVU97XK2GkLeww6azYqlaM9UjnaWqz124F+ZtH5SA==
 
 run-parallel@^1.1.9:
   version "1.2.0"

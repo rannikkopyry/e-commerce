@@ -197,7 +197,7 @@ const TermsAndConditions = () => {
         <h2>10. Palvelun ylläpitäjä</h2>
         <p>Palvelua ylläpitää: </p>
         <p>Less Friction Oy</p>
-        <p>y-tunnus: 3229018-8</p>
+        <p>y-tunnus: 3284820-9</p>
         <p>88610 Vuokatti</p>
         <p>Suomi</p>
       </div>

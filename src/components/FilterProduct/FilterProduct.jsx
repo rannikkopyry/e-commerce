@@ -10,11 +10,9 @@ import {
 import { Search } from "@material-ui/icons";
 import SelectCategory from "./SelectCategory";
 import { commerce } from "../../lib/commerce";
-import Product from "../Products/Product/Product";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
 
@@ -110,7 +108,7 @@ const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
                             <div className="image">
                               <img
                                 src={product.image.url}
-                                alt="Product image"
+                                alt=""
                               />
                             </div>
                             <ListItemText>

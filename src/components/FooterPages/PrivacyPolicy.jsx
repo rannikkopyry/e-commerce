@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
         <h2>Rekisterinpitäjä ja sen yhteystiedot</h2>
         <p>Käsiteltävien henkilötietojen rekisterinpitäjänä toimii:</p>
         <p>
-          Less Friction Oy (Y-tunnus: 1456344-5) Lampikatu 4 C1 88610
+          Less Friction Oy (Y-tunnus: 3284820-9) Lampikatu 4 C1 88610
           Vuokatti
         </p>
         <p>

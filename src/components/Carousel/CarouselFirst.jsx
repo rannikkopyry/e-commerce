@@ -5,9 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import "./styles.css";
 import "react-multi-carousel/lib/styles.css";
-import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
+
 
 const responsive = {
   desktop: {

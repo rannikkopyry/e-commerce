@@ -1,5 +1,5 @@
 import { Grid, Button, Container, Typography } from "@material-ui/core";
-import { AddShoppingCart, ContactlessOutlined } from "@material-ui/icons";
+import { AddShoppingCart } from "@material-ui/icons";
 import { commerce } from "../../lib/commerce";
 import React, { useState, useEffect } from "react";
 import "./styles.css";

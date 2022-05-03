@@ -6,7 +6,6 @@ export { default as Checkout } from "./CheckoutForm/Checkout/Checkout";
 export { default as Glidewaxes } from "./Products/Glidewaxes";
 export { default as Rotokit } from "./Products/Rotokit";
 export { default as Gripwaxes } from "./Products/Gripwaxes";
-export { default as Accessories } from "./Accessories/Accessories";
 export { default as About } from "./About/About";
 export { default as Whyus } from "./Whyus/Whyus";
 export { default as Contact } from "./Contact/Contact";

@@ -4,12 +4,9 @@ import {
   Toolbar,
   IconButton,
   Badge,
-  MenuItem,
-  Menu,
   Typography,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import FilterProduct from "../FilterProduct/FilterProduct";
@@ -22,23 +19,11 @@ const PrimarySearchAppBar = ({
   totalItems,
   categories,
   menuOpen,
-  setMenuOpen,
-  items,
   addProduct,
 }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [searchResult, setSearchResult] = useState("");
-  const open = Boolean(anchorEl);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-
-  
   const BootstrapButton = styled(Button)({
     boxShadow: "none",
     textTransform: "none",
@@ -65,7 +50,6 @@ const PrimarySearchAppBar = ({
     <>
       <div className={"topbar " + (menuOpen && "active")}>
         <AppBar position="fixed" className={classes.appBar} color="inherit">
-        
           <Toolbar>
             <Typography
               component={Link}
@@ -136,9 +120,14 @@ const PrimarySearchAppBar = ({
             </div>
             <div className={classes.grow} />
             <div className={classes.hamburger}>
-            <MobileMenu right width={'100%'} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+              <MobileMenu
+                right
+                width={"100%"}
+                pageWrapId={"page-wrap"}
+                outerContainerId={"outer-container"}
+              />
             </div>
-
+           
 
             <div className={classes.button}>
               <IconButton
