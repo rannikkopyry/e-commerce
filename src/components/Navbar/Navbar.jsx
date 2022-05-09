@@ -6,6 +6,8 @@ import {
   Badge,
   Typography,
 } from "@material-ui/core";
+import PropTypes from 'prop-types';
+import Slide from '@mui/material/Slide';
 import { ShoppingCart } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -14,15 +16,42 @@ import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
 import logo from "../../assets/yesskiwax.png";
 import useStyles from "./styles";
-import MobileMenu from "../Menu/MobileMenu";
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-const PrimarySearchAppBar = ({
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+
+function PrimarySearchAppBar({
   totalItems,
   categories,
   menuOpen,
   setMenuOpen,
   addProduct,
-}) => {
+  props
+}) {
   const [searchResult, setSearchResult] = useState("");
   const classes = useStyles();
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -69,8 +98,9 @@ const PrimarySearchAppBar = ({
   return (
     <>
       <nav className={"topbar " + (menuOpen && "active")}>
-        <AppBar position="fixed" className={classes.appBar} color="inherit">
-            <Toolbar>
+      <HideOnScroll {...props}>
+        <AppBar position="sticky" className={classes.appBar} color="inherit">
+            <Toolbar id="topbar-anchor">
               <Typography
                 component={Link}
                 to="/"
@@ -161,6 +191,7 @@ const PrimarySearchAppBar = ({
               </div>
             </Toolbar>
         </AppBar>
+        </HideOnScroll>
       </nav>
     </>
   );

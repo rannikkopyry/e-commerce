@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CssBaseline } from "@material-ui/core";
+import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {
   Navbar,
@@ -23,8 +23,50 @@ import {
 } from "./components";
 import { commerce } from "./lib/commerce";
 import "./app.css";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Box from "@mui/material/Box";
+import Zoom from "@mui/material/Zoom";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-const App = () => {
+function ScrollTop(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#topbar-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Zoom>
+  );
+}
+
+function App(props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [categories, setCategories] = useState([]);
@@ -216,9 +258,14 @@ const App = () => {
           </Switch>
         </div>
       </div>
+      <ScrollTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
       <Footer />
     </Router>
   );
-};
+}
 
 export default App;

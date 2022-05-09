@@ -1,12 +1,11 @@
-
 .menu {
-  width: 300px;
-  height: 100vh;
-  background-color: #C83532;
+  width: 400px;
+  height: 420px;
+  background-color: white;
   position: fixed;
   top: 70px;
-  right: -300px;
-  z-index: 2;
+  right: -400px;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +20,13 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 300;
-    color: white;
+    color: black;
     width: 60%;
 
     li {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       a {
         font-size: inherit;
         color: inherit;

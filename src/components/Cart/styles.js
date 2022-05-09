@@ -25,6 +25,7 @@ export default makeStyles((theme) => ({
     marginTop: '10%',
     marginBottom: '10%',
     width: '100%',
+    minHeight: "100vh",
     justifyContent: 'space-between',
   },
 }));
