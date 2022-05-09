@@ -91,5 +91,6 @@ export default makeStyles((theme) => ({
     },
     position: "relative",
     zIndex: "999",
+    top: "3px",
   }
 }));

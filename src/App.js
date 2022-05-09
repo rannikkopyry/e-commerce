@@ -28,6 +28,20 @@ import Box from "@mui/material/Box";
 import Zoom from "@mui/material/Zoom";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#C83532",
+    },
+    secondary: {
+      light: "#0066ff",
+      main: "#0044ff",
+      contrastText: "#ffcc00",
+    },
+  },
+});
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -154,117 +168,119 @@ function App(props) {
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   return (
-    <Router>
-      <div style={{ display: "flex" }}>
-        <CssBaseline />
-        <Navbar
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          categories={categories}
-          totalItems={cart.total_items}
-          handleDrawerToggle={handleDrawerToggle}
-        />
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Homepage
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/products">
-              <Products
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/luistovoiteet">
-              <Glidewaxes
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/rotokit">
-              <Rotokit
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/pitovoiteet">
-              <Gripwaxes
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/muut">
-              <OtherProducts
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/yritys">
-              <About />
-            </Route>
-            <Route exact path="/miksimeidat">
-              <Whyus />
-            </Route>
-            <Route exact path="/yhteystiedot">
-              <Contact />
-            </Route>
-            <Route exact path="/cart">
-              <Cart
-                cart={cart}
-                onUpdateCartQty={handleUpdateCartQty}
-                onRemoveFromCart={handleRemoveFromCart}
-                onEmptyCart={handleEmptyCart}
-              />
-            </Route>
-            <Route path="/checkout" exact>
-              <Checkout
-                cart={cart}
-                order={order}
-                onCaptureCheckout={handleCaptureCheckout}
-                error={errorMessage}
-              />
-            </Route>
-            <Route path="/product-view/:id" exact>
-              <ProductView
-                onUpdateCartQty={handleUpdateCartQty}
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-            <Route exact path="/tietosuojaseloste">
-              <PrivacyPolicy />
-            </Route>
-            <Route exact path="/kayttoehdot">
-              <TermsAndConditions />
-            </Route>
-            <Route>
-              <CarouselFirst
-                categories={categories}
-                onAddToCart={handleAddToCart}
-                handleUpdateCartQty
-              />
-            </Route>
-          </Switch>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div style={{ display: "flex" }}>
+          <CssBaseline />
+          <Navbar
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+            categories={categories}
+            totalItems={cart.total_items}
+            handleDrawerToggle={handleDrawerToggle}
+          />
+          <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <div className="content">
+            <Switch>
+              <Route exact path="/">
+                <Homepage
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/products">
+                <Products
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/luistovoiteet">
+                <Glidewaxes
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/rotokit">
+                <Rotokit
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/pitovoiteet">
+                <Gripwaxes
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/muut">
+                <OtherProducts
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/yritys">
+                <About />
+              </Route>
+              <Route exact path="/miksimeidat">
+                <Whyus />
+              </Route>
+              <Route exact path="/yhteystiedot">
+                <Contact />
+              </Route>
+              <Route exact path="/cart">
+                <Cart
+                  cart={cart}
+                  onUpdateCartQty={handleUpdateCartQty}
+                  onRemoveFromCart={handleRemoveFromCart}
+                  onEmptyCart={handleEmptyCart}
+                />
+              </Route>
+              <Route path="/checkout" exact>
+                <Checkout
+                  cart={cart}
+                  order={order}
+                  onCaptureCheckout={handleCaptureCheckout}
+                  error={errorMessage}
+                />
+              </Route>
+              <Route path="/product-view/:id" exact>
+                <ProductView
+                  onUpdateCartQty={handleUpdateCartQty}
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+              <Route exact path="/tietosuojaseloste">
+                <PrivacyPolicy />
+              </Route>
+              <Route exact path="/kayttoehdot">
+                <TermsAndConditions />
+              </Route>
+              <Route>
+                <CarouselFirst
+                  categories={categories}
+                  onAddToCart={handleAddToCart}
+                  handleUpdateCartQty
+                />
+              </Route>
+            </Switch>
+          </div>
         </div>
-      </div>
-      <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
-      <Footer />
-    </Router>
+        <ScrollTop {...props}>
+          <Fab color="primary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
