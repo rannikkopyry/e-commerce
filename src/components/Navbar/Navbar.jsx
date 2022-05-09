@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -19,10 +19,29 @@ const PrimarySearchAppBar = ({
   totalItems,
   categories,
   menuOpen,
+  setMenuOpen,
   addProduct,
 }) => {
   const [searchResult, setSearchResult] = useState("");
   const classes = useStyles();
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", changeWidth);
+
+    return () => {
+      window.removeEventListener("resize", changeWidth);
+    };
+  }, []);
 
   const BootstrapButton = styled(Button)({
     boxShadow: "none",
@@ -48,102 +67,104 @@ const PrimarySearchAppBar = ({
 
   return (
     <>
-      <div className={"topbar " + (menuOpen && "active")}>
+      <nav className={"topbar " + (menuOpen && "active")}>
         <AppBar position="fixed" className={classes.appBar} color="inherit">
-          <Toolbar>
-            <Typography
-              component={Link}
-              to="/"
-              variant="h6"
-              className={classes.title}
-              color="inherit"
-            >
-              <img
-                src={logo}
-                alt="Yesskiwax logo"
-                height="45px"
-                className={classes.image}
-              />
-            </Typography>
-            <div className={classes.menuitem}>
-              <BootstrapButton component={Link} id="basic-button" to="/">
-                Etusivu
-              </BootstrapButton>
-            </div>
-            <div className={classes.menuitem}>
+          {(toggleMenu || screenWidth > 500) && (
+            <Toolbar>
+              <Typography
+                component={Link}
+                to="/"
+                variant="h6"
+                className={classes.title}
+                color="inherit"
+              >
+                <img
+                  src={logo}
+                  alt="Yesskiwax logo"
+                  height="45px"
+                  className={classes.image}
+                />
+              </Typography>
+              <div className={classes.menuitem}>
+                <BootstrapButton component={Link} id="basic-button" to="/">
+                  Etusivu
+                </BootstrapButton>
+              </div>
+              <div className={classes.menuitem}>
+                <div className={classes.menuitem}>
+                  <BootstrapButton
+                    component={Link}
+                    id="basic-button"
+                    to="/luistovoiteet"
+                  >
+                    Luistovoiteet
+                  </BootstrapButton>
+                </div>
+              </div>
               <div className={classes.menuitem}>
                 <BootstrapButton
                   component={Link}
                   id="basic-button"
-                  to="/luistovoiteet"
+                  to="/pitovoiteet"
                 >
-                  Luistovoiteet
+                  Pitovoiteet
                 </BootstrapButton>
               </div>
-            </div>
-            <div className={classes.menuitem}>
-              <BootstrapButton
-                component={Link}
-                id="basic-button"
-                to="/pitovoiteet"
-              >
-                Pitovoiteet
-              </BootstrapButton>
-            </div>
-            <div className={classes.menuitem}>
-              <BootstrapButton component={Link} id="basic-button" to="/rotokit">
-                Roto Kit
-              </BootstrapButton>
-            </div>
-            <div className={classes.menuitem}>
-              <BootstrapButton component={Link} id="basic-button" to="/muut">
-                Muut tuotteet
-              </BootstrapButton>
-            </div>
-            <div className={classes.menuitem}>
-              <BootstrapButton
-                component={Link}
-                id="basic-button"
-                to="/yhteystiedot"
-              >
-                Yhteystiedot
-              </BootstrapButton>
-            </div>
-            <div className={classes.search}>
-              <FilterProduct
-                placeholder="Etsi tuotteita"
-                categories={categories}
-                searchResult={searchResult}
-                setSearchResult={setSearchResult}
-                addProduct={addProduct}
-              />
-            </div>
-            <div className={classes.grow} />
-            <div className={classes.hamburger}>
-              <MobileMenu
-                right
-                width={"100%"}
-                pageWrapId={"page-wrap"}
-                outerContainerId={"outer-container"}
-              />
-            </div>
-           
+              <div className={classes.menuitem}>
+                <BootstrapButton
+                  component={Link}
+                  id="basic-button"
+                  to="/rotokit"
+                >
+                  Roto Kit
+                </BootstrapButton>
+              </div>
+              <div className={classes.menuitem}>
+                <BootstrapButton component={Link} id="basic-button" to="/muut">
+                  Muut tuotteet
+                </BootstrapButton>
+              </div>
+              <div className={classes.menuitem}>
+                <BootstrapButton
+                  component={Link}
+                  id="basic-button"
+                  to="/yhteystiedot"
+                >
+                  Yhteystiedot
+                </BootstrapButton>
+              </div>
+              <div className={classes.search}>
+                <FilterProduct
+                  placeholder="Etsi tuotteita"
+                  categories={categories}
+                  searchResult={searchResult}
+                  setSearchResult={setSearchResult}
+                  addProduct={addProduct}
+                />
+              </div>
+              <div className={classes.grow} />
+              <div className={classes.hamburger}>
+                <button onClick={()=>setMenuOpen(!menuOpen)} className="btn">
+                  Valikko
+                </button>
+              </div>
 
-            <div className={classes.button}>
-              <IconButton
-                component={Link}
-                to="/cart"
-                aria-label="Show cart items"
-                color="inherit"
-              >
-                <Badge badgeContent={totalItems} color="secondary">
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
-            </div>
-          </Toolbar>
+              <div className={classes.button}>
+                <IconButton
+                  component={Link}
+                  to="/cart"
+                  aria-label="Show cart items"
+                  color="inherit"
+                >
+                  <Badge badgeContent={totalItems} color="secondary">
+                    <ShoppingCart />
+                  </Badge>
+                </IconButton>
+              </div>
+            </Toolbar>
+          )}
         </AppBar>
-      </div>
+      </nav>
     </>
   );
 };

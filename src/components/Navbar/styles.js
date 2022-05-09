@@ -89,5 +89,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       display:  "none",
     },
+    position: "relative",
+    zIndex: "999",
   }
 }));

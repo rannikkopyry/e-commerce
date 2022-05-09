@@ -17,3 +17,4 @@ export { default as LoaderSpinner } from "./LoaderSpinner/LoaderSpinner";
 export { default as OtherProducts } from './Products/OtherProducts';
 export { default as ProductView } from "./ProductView/ProductView";
 export {default as CarouselFirst} from "./Carousel/CarouselFirst";
+export { default as MobileMenu } from "./Menu/MobileMenu";

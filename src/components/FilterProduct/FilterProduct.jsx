@@ -68,8 +68,6 @@ const FilterProduct = ({ categories, searchResult, setSearchResult }) => {
     }
   };
 
-  console.log({ searchResult });
-
   return (
     <div className="filter-bar">
       <Container>

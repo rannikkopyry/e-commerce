@@ -18,12 +18,14 @@ import {
   Rotokit,
   OtherProducts,
   ProductView,
-  CarouselFirst
+  CarouselFirst,
+  MobileMenu,
 } from "./components";
 import { commerce } from "./lib/commerce";
 import "./app.css";
 
 const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState({});
@@ -52,7 +54,6 @@ const App = () => {
   };
 
   // Fetch cart
-  
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -115,10 +116,13 @@ const App = () => {
       <div style={{ display: "flex" }}>
         <CssBaseline />
         <Navbar
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
           categories={categories}
           totalItems={cart.total_items}
           handleDrawerToggle={handleDrawerToggle}
         />
+        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <div className="content">
           <Switch>
             <Route exact path="/">

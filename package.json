@@ -28,6 +28,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-stripe-elements": "^6.1.2",
+    "sass": "^1.51.0",
     "semantic-ui-react": "^2.0.1",
     "visma-pay": "^2.0.1"
   },
