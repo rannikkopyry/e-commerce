@@ -86,7 +86,7 @@ export default makeStyles((theme) => ({
     },
   },
   hamburger: {
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display:  "none",
     },
     position: "relative",

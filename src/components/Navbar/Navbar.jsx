@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
 import Button from "@mui/material/Button";
 import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
@@ -69,7 +70,6 @@ const PrimarySearchAppBar = ({
     <>
       <nav className={"topbar " + (menuOpen && "active")}>
         <AppBar position="fixed" className={classes.appBar} color="inherit">
-          {(toggleMenu || screenWidth > 500) && (
             <Toolbar>
               <Typography
                 component={Link}
@@ -144,9 +144,7 @@ const PrimarySearchAppBar = ({
               </div>
               <div className={classes.grow} />
               <div className={classes.hamburger}>
-                <button onClick={()=>setMenuOpen(!menuOpen)} className="btn">
-                  Valikko
-                </button>
+                <MenuIcon onClick={()=>setMenuOpen(!menuOpen)} className="btn" />
               </div>
 
               <div className={classes.button}>
@@ -162,7 +160,6 @@ const PrimarySearchAppBar = ({
                 </IconButton>
               </div>
             </Toolbar>
-          )}
         </AppBar>
       </nav>
     </>
