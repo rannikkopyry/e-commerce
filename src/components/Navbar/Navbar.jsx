@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Button from "@mui/material/Button";
 import FilterProduct from "../FilterProduct/FilterProduct";
 import { styled } from "@mui/material/styles";
-import logo from "../../assets/yesskiwax.png";
+import logo from "../../assets/Rnk-sport.fi.png";
 import useStyles from "./styles";
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
@@ -111,7 +111,7 @@ function PrimarySearchAppBar({
                 <img
                   src={logo}
                   alt="Yesskiwax logo"
-                  height="45px"
+                  height="37px"
                   className={classes.image}
                 />
               </Typography>
